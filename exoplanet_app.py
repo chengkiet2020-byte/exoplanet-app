@@ -36,7 +36,7 @@ with col2:
     st.image("https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/logo.png?raw=true", width=120)
 
 st.title("🚀 NASA Exoplanet Classifier")
-st.markdown("<h3 style='text-align: center; color: "#728FCE";'>Galactic Explorer 117</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; 'color: #FFD700;'>Galactic Explorer 117</h3>", unsafe_allow_html=True)
 st.write("Analyze Kepler exoplanet data and classify candidates into **Confirmed**, **Candidate**, or **False Positive**.")
 
 # 用户输入
