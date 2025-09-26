@@ -30,7 +30,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)
 st.image("https://drive.google.com/drive/u/0/home", width=120)
 st.title("🚀 NASA Exoplanet Classifier")
-st.write("Galactic Explorer 117", font_size=30)
+st.markdown("<h3 style='text-align: center; color: grey;'>Galactic Explorer 117</h3>", unsafe_allow_html=True)
 st.write("Analyze Kepler exoplanet data and classify candidates into **Confirmed**, **Candidate**, or **False Positive**.")
 
 # 用户输入
