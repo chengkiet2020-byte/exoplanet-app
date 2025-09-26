@@ -27,12 +27,12 @@ page_bg_img = """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # NASA Logo + 标题
-col1, col2 = st.columns([1, 0.1])
+col1, col2, col3 = st.columns([1, 2, 1])
 
 with col1:
     st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)
 
-with col2:
+with col3:
     st.image("https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/logo.png?raw=true", width=120)
 
 st.title("🚀 NASA Exoplanet Classifier")
