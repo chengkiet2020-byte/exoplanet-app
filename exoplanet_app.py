@@ -37,7 +37,7 @@ with col2:
 
 st.title("🚀 NASA Exoplanet Classifier")
 st.markdown("<h3 style='text-align: center; color: #1E90FF;'>Galactic Explorer 117</h3>", unsafe_allow_html=True)
-st.write("<h3 style='text-align: center; color: red;'>Analyze Kepler exoplanet data and classify candidates into **Confirmed**, **Candidate**, or **False Positive**.>", unsafe_allow_html=True)
+st.write("<h3 style='text-align: center; color: red;'>Analyze Kepler exoplanet data and classify candidates into Confirmed, Candidate, or False Positive", unsafe_allow_html=True)
 
 # 用户输入
 koi_period = st.number_input("Enter Orbital Period (days)", min_value=0.0, step=0.1, value=10.0)
