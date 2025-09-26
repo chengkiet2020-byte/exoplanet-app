@@ -27,8 +27,14 @@ page_bg_img = """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # NASA Logo + 标题
-st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)
-st.image("https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/myphoto.jpg?raw=true", width=120)
+col1, col2 = st.columns([1, 1])
+
+with col1:
+    st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)
+
+with col2:
+    st.image("https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/logo.png?raw=true", width=120)
+
 st.title("🚀 NASA Exoplanet Classifier")
 st.markdown("<h3 style='text-align: center; color: grey;'>Galactic Explorer 117</h3>", unsafe_allow_html=True)
 st.write("Analyze Kepler exoplanet data and classify candidates into **Confirmed**, **Candidate**, or **False Positive**.")
