@@ -27,7 +27,7 @@ page_bg_img = """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # NASA Logo + 标题
-col1, col2 = st.columns([1, 3])
+col1, col2 = st.columns([1, 0.1])
 
 with col1:
     st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)
