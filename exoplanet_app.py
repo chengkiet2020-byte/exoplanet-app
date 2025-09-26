@@ -33,11 +33,11 @@ with col1:
     st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)
 
 with col3:
-    st.image("https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/logo.png?raw=true", width=120)
+    st.image("https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/logo.png?raw=true", width=210)
 
 st.title("🚀 NASA Exoplanet Classifier")
-st.markdown("<h3 style='text-align: center; color: #1E90FF;'>Galactic Explorer 117</h3>", unsafe_allow_html=True)
-st.write("<h3 style='text-align: center; color: red;'>Analyze Kepler exoplanet data and classify candidates into Confirmed, Candidate, or False Positive", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center; color: #1E90FF;'>Galactic Explorer 117</h2>", unsafe_allow_html=True)
+st.write("<h3 style='text-align: center; color: yellow;'>Analyze Kepler exoplanet data and classify candidates into Confirmed, Candidate, or False Positive", unsafe_allow_html=True)
 
 # 用户输入
 koi_period = st.number_input("Enter Orbital Period (days)", min_value=0.0, step=0.1, value=10.0)
