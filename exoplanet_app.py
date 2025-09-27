@@ -9,6 +9,149 @@ import pickle
 import joblib
 import numpy as np
 
+# Custom CSS for gradient dark blue header + sidebar
+st.markdown(
+    """
+    <style>
+    /* 顶部导航栏（Header） */
+    header[data-testid="stHeader"] {
+        background: linear-gradient(90deg, #001f3f, #003366);
+        color: white;
+    }
+
+    /* 左侧 Sidebar 渐变 */
+    section[data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #00264d, #004080);
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# 放在 app 开头
+st.markdown(
+    """
+    <style>
+    /* 整体背景黑色 */
+    .stApp {
+        background-color: #000000;
+        color: white !important;
+        font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    /* 标题 (title, header, subheader) 白色 + NASA 蓝 */
+    h1, h2, h3, h4, h5, h6 {
+        color: #00BFFF !important;  /* NASA 蓝色 */
+        font-weight: bold;
+    }
+
+    /* 普通文字 */
+    p, label, span, div {
+        color: white !important;
+    }
+
+    /* 按钮设计 */
+    .stButton>button {
+        background-color: #0B3D91;  /* 深蓝色 */
+        color: white;
+        border-radius: 10px;
+        border: 1px solid #1E90FF;
+        padding: 8px 16px;
+    }
+    .stButton>button:hover {
+        background-color: #1E90FF;  /* 浅蓝 hover */
+        color: black;
+    }
+
+    /* 输入框 (number_input, text_input 等) */
+    .stTextInput>div>div>input, .stNumberInput input {
+        background-color: #111111;
+        color: white !important;
+        border: 1px solid #1E90FF;
+        border-radius: 5px;
+    }
+
+    /* 下拉菜单 */
+    .stSelectbox div[data-baseweb="select"]>div {
+        background-color: #111111;
+        color: white !important;
+        border: 1px solid #1E90FF;
+        border-radius: 5px;
+    }
+
+    /* 滑动条 slider 颜色 */
+    .stSlider [role="slider"] {
+        background-color: #1E90FF !important;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <style>
+    /* 链接默认样式 */
+    a {
+        color: #00BFFF !important;       /* 更亮蓝 (DodgerBlue) */
+        text-decoration: none !important; /* 去掉下划线 */
+        font-weight: bold;
+    }
+    /* 鼠标悬停样式 */
+    a:hover {
+        color: #40CFFF !important;       /* 更浅亮蓝 */
+        text-decoration: underline !important; /* 悬停时显示下划线 */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <style>
+    /* 只针对 dataframe 内部的 grid */
+    div[data-testid="stDataFrame"] div[role="grid"] {
+        background-color: #001F3F !important;  /* 深蓝背景 */
+        color: white !important;               /* 白字 */
+    }
+
+    /* 表格格子 */
+    div[data-testid="stDataFrame"] div[role="gridcell"] {
+        background-color: #001F3F !important;
+        color: white !important;
+        border: 1px solid #00BFFF !important;  /* NASA 蓝边框 */
+    }
+
+    /* 列名表头 */
+    div[data-testid="stDataFrame"] div[role="columnheader"] {
+        background-color: #003366 !important;  /* 稍深的蓝色 */
+        color: white !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown("""
+    <style>
+    /* 修改加载圈为白色 */
+    .stSpinner > div {
+        border-top-color: white !important;
+        border-right-color: white !important;
+        border-bottom-color: white !important;
+        border-left-color: transparent !important;
+    }
+    /* 修改loading文字为白色 */
+    .stSpinner > div > div {
+        color: white !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
 # 加载训练好的模型
 model = pickle.load(open("exoplanet_model.pkl", "rb"))
 
@@ -21,13 +164,38 @@ page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
 # --- Home Page ---
 if page == "Home":
     st.title("🚀 NASA Exoplanet Classifier")
+
+    # 设置星空背景
+    page_bg_img = """
+    <style>
+    [data-testid="stAppViewContainer"] {
+        background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    [data-testid="stHeader"] {
+        #background: rgba(0,0,0,0); /* 顶部透明 */
+    }
+
+    [data-testid="stToolbar"] {
+        right: 2rem;
+    }
+    </style>
+    """
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
     st.subheader("🌌 Galactic Explorer 117")
-    st.write("""
-    Welcome to our Exoplanet Classifier!  
-    Choose one of the modes from the sidebar:
-    - **Novice Mode** 🟢 : For beginners, explore planets by entering basic parameters.  
-    - **Researcher Mode** 🔬 : For advanced users, upload datasets, train models, and analyze results.  
-    """)
+    st.markdown(
+        """
+        Welcome to our Exoplanet Classifier!  
+        Choose one of the modes from the sidebar:
+        - **Novice Mode** 🟢 : For beginners, explore planets by entering basic parameters. (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
+        - **Researcher Mode** 🔬 : For advanced users, upload datasets, train models, and analyze results.  
+        """,
+        unsafe_allow_html=True
+    )
 
 # --- Novice Mode ---
 elif page == "Novice Mode":
@@ -44,7 +212,7 @@ elif page == "Novice Mode":
     }
 
     [data-testid="stHeader"] {
-        background: rgba(0,0,0,0); /* 顶部透明 */
+        #background: rgba(0,0,0,0); /* 顶部透明 */
     }
 
     [data-testid="stToolbar"] {
@@ -58,14 +226,10 @@ elif page == "Novice Mode":
     col1, col2, col3 = st.columns([1, 2, 1])
 
     with col1:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=320)
-
-    with col3:
-        st.image("https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/logo.png?raw=true", width=410)
+        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)
 
     st.title("🚀 NASA Exoplanet Classifier")
-    st.markdown("<h2 style='text-align: center; color: #1E90FF;'>Galactic Explorer 117</h2>", unsafe_allow_html=True)
-    st.write("<h3 style='text-align: center; color: yellow;'>Analyze Kepler exoplanet data and classify candidates into Confirmed, Candidate, or False Positive</h3>", unsafe_allow_html=True)
+    st.write("<h3 style='text-align: center; color: white;'>Analyze Kepler exoplanet data and classify candidates into Confirmed, Candidate, or False Positive</h3>", unsafe_allow_html=True)
 
     # 用户输入
     koi_period = st.number_input("Enter Orbital Period (days)", min_value=0.0, step=0.1, value=10.0)
@@ -113,7 +277,63 @@ elif page == "Novice Mode":
 # --- Researcher Mode ---
 elif page == "Researcher Mode":
     st.header("🔬 Researcher Mode - Advanced Tools")
+
+    # 设置星空背景
+    page_bg_img = """
+    <style>
+    [data-testid="stAppViewContainer"] {
+        background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    [data-testid="stHeader"] {
+        #background: rgba(0,0,0,0); /* 顶部透明 */
+    }
+
+    [data-testid="stToolbar"] {
+        right: 2rem;
+    }
+    </style>
+    """
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
     st.write("Here you can upload new datasets, retrain the model, and analyze accuracy.")
+
+    st.markdown(
+        """
+        <style>
+        /* File uploader 外框 */
+        [data-testid="stFileUploader"] section {
+            background-color: #001f3f;   /* 深蓝色背景 */
+            border: 1px solid #00BFFF;   /* 浅蓝色边框 */
+            border-radius: 8px;
+        }
+
+        /* File uploader 内部文字 */
+        [data-testid="stFileUploader"] label,
+        [data-testid="stFileUploader"] div,
+        [data-testid="stFileUploader"] p {
+            color: white !important;   /* 白色字体 */
+        }
+
+        /* 上传按钮 */
+        [data-testid="stFileUploader"] button {
+            background-color: #111111;   /* 按钮黑色 */
+            color: white !important;     /* 按钮文字白色 */
+            border: 1px solid #555555;
+            border-radius: 6px;
+        }
+
+        [data-testid="stFileUploader"] button:hover {
+            background-color: #222222;   /* hover 时稍微亮一点 */
+            border: 1px solid #888888;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
     uploaded_file = st.file_uploader("📂 Upload dataset", type=["csv", "txt", "tsv", "xlsx"])
 
@@ -150,28 +370,34 @@ elif page == "Researcher Mode":
 
                 if st.button("🚀 Train Model"):
                     if len(feature_cols) > 0:
-                        X = data[feature_cols].select_dtypes(include=['number']).fillna(0)
-                        y = data[target_col]
-                        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                        with st.spinner("🛰️ Training model... Please wait while the algorithm orbits the data galaxy 🌌"):
+                            import time
+                            time.sleep(2)  # 这里可以模拟loading，真实情况是训练时间本身
+            
+                            X = data[feature_cols].select_dtypes(include=['number']).fillna(0)
+                            y = data[target_col]
+                            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-                        if model_choice == "RandomForest":
-                            model = RandomForestClassifier(
-                                n_estimators=n_estimators,
-                                max_depth=max_depth,
-                                min_samples_split=min_samples_split,
-                                min_samples_leaf=min_samples_leaf,
-                                random_state=42
-                            )
-                        else:
-                            import lightgbm as lgb
-                            model = lgb.LGBMClassifier(
-                                n_estimators=n_estimators,
-                                max_depth=max_depth,
-                                learning_rate=learning_rate,
-                                random_state=42
-                            )
+                            if model_choice == "RandomForest":
+                                model = RandomForestClassifier(
+                                    n_estimators=n_estimators,
+                                    max_depth=max_depth,
+                                    min_samples_split=min_samples_split,
+                                    min_samples_leaf=min_samples_leaf,
+                                    random_state=42
+                                )
+                            else:
+                                import lightgbm as lgb
+                                model = lgb.LGBMClassifier(
+                                    n_estimators=n_estimators,
+                                    max_depth=max_depth,
+                                    learning_rate=learning_rate,
+                                    random_state=42
+                                )
 
-                        model.fit(X_train, y_train)
+                            model.fit(X_train, y_train)
+
+                        # 🚀 出spinner后显示结果
                         y_pred = model.predict(X_test)
                         acc = accuracy_score(y_test, y_pred)
                         st.success(f"✅ {model_choice} trained! Accuracy: **{acc:.2f}**")
@@ -194,33 +420,46 @@ elif page == "Researcher Mode":
 
                 if st.button("🔍 Run Grid Search"):
                     if len(feature_cols) > 0:
-                        X = data[feature_cols].select_dtypes(include=['number']).fillna(0)
-                        y = data[target_col]
-                        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                        with st.spinner("🚀 Running Grid Search... Exploring hyperparameter galaxies, please hold tight 🌌🛰️"):
+                            X = data[feature_cols].select_dtypes(include=['number']).fillna(0)
+                            y = data[target_col]
+                            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-                        from sklearn.model_selection import GridSearchCV
+                            from sklearn.model_selection import GridSearchCV
 
-                        if model_choice == "RandomForest":
-                            param_grid = {
-                                "n_estimators": [100, 200, 300],
-                                "max_depth": [5, 10, 15],
-                                "min_samples_split": [2, 5, 10],
-                                "min_samples_leaf": [1, 2, 4],
-                            }
-                            grid = GridSearchCV(RandomForestClassifier(random_state=42),
-                                                param_grid, cv=3, n_jobs=-1, verbose=1)
+                            if model_choice == "RandomForest":
+                                param_grid = {
+                                    "n_estimators": [100, 200, 300],
+                                    "max_depth": [5, 10, 15],
+                                    "min_samples_split": [2, 5, 10],
+                                    "min_samples_leaf": [1, 2, 4],
+                                }
+                                grid = GridSearchCV(
+                                    RandomForestClassifier(random_state=42),
+                                    param_grid,
+                                    cv=3,
+                                    n_jobs=-1,
+                                    verbose=1
+                                )
 
-                        else:  # LightGBM
-                            import lightgbm as lgb
-                            param_grid = {
-                                "n_estimators": [100, 200, 300],
-                                "max_depth": [-1, 6, 12],
-                                "learning_rate": [0.01, 0.05, 0.1],
-                            }
-                            grid = GridSearchCV(lgb.LGBMClassifier(random_state=42),
-                                                param_grid, cv=3, n_jobs=-1, verbose=1)
+                            else:  # LightGBM
+                                import lightgbm as lgb
+                                param_grid = {
+                                    "n_estimators": [100, 200, 300],
+                                    "max_depth": [-1, 6, 12],
+                                    "learning_rate": [0.01, 0.05, 0.1],
+                                }
+                                grid = GridSearchCV(
+                                    lgb.LGBMClassifier(random_state=42),
+                                    param_grid,
+                                    cv=3,
+                                    n_jobs=-1,
+                                    verbose=1
+                                )
 
-                        grid.fit(X_train, y_train)
+                            grid.fit(X_train, y_train)  # 🔄 这里会触发 spinner
+
+                        # 🚀 训练完成后显示结果
                         st.success(f"🎯 Best Parameters: {grid.best_params_}")
                         best_model = grid.best_estimator_
 
@@ -242,3 +481,16 @@ elif page == "Researcher Mode":
 
         except Exception as e:
             st.error(f"❌ Could not read file: {e}")
+    
+    st.markdown(
+        """
+        **Or train using NASA datasets:**
+
+        - <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>  
+        - <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=TOI" target="_blank">NASA TESS Objects of Interest (TOI)</a>  
+        - <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=k2pandc" target="_blank">NASA K2 Planets and Candidates</a>  
+
+        ⚠️ These datasets need to be downloaded in CSV format and uploaded here again.
+        """,
+        unsafe_allow_html=True
+    )
