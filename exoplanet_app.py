@@ -163,7 +163,9 @@ page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
 
 # --- Home Page ---
 if page == "Home":
-    st.title("🚀 NASA Exoplanet Classifier")
+    with col1:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)  
+    st.title("🚀 Exoscan 117")
 
     # 设置星空背景
     page_bg_img = """
@@ -189,6 +191,7 @@ if page == "Home":
     st.subheader("🌌 Galactic Explorer 117")
     st.markdown(
         """
+        <p style="font-size:20px; line-height:1.6;">
         Welcome to our Exoplanet Classifier!  
         Choose one of the modes from the sidebar:
         - **Novice Mode** 🟢 : For beginners, explore planets by entering basic parameters. (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
@@ -225,10 +228,9 @@ elif page == "Novice Mode":
     # NASA Logo + 标题
     col1, col2, col3 = st.columns([1, 2, 1])
 
-    with col1:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)
+    # with col1:
+    #     st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)  
 
-    st.title("🚀 NASA Exoplanet Classifier")
     st.write("<h3 style='text-align: center; color: white;'>Analyze Kepler exoplanet data and classify candidates into Confirmed, Candidate, or False Positive</h3>", unsafe_allow_html=True)
 
     # 用户输入
@@ -493,4 +495,5 @@ elif page == "Researcher Mode":
         ⚠️ These datasets need to be downloaded in CSV format and uploaded here again.
         """,
         unsafe_allow_html=True
+
     )
