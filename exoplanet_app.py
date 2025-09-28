@@ -193,7 +193,7 @@ if page == "Home":
     st.subheader("🌌 Galactic Explorer 117")
     st.markdown(
         """
-        <p style="font-size:20px; line-height:1.6;">
+        <p style="font-size:40px; line-height:1.6;">
         Welcome to our Exoplanet Classifier!  
         Choose one of the modes from the sidebar:
         - **Novice Mode** 🟢 : For beginners, explore planets by entering basic parameters. (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
@@ -499,5 +499,6 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
