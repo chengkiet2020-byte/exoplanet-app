@@ -167,7 +167,10 @@ if page == "Home":
 
     with col1:
         st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
+    
+    with col2: ("https://drive.google.com/file/d/1kZffJi5bV_xfNZLtQSihRnVbxe7hfhNT/view?usp=sharing")
     st.title("🚀 Exoscan 117")
+    
 
     # 设置星空背景
     page_bg_img = """
@@ -501,6 +504,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
