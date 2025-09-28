@@ -166,7 +166,7 @@ if page == "Home":
     col1, col2, col3 = st.columns([1, 2, 1])
 
     with col1:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)  
+        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
     st.title("🚀 Exoscan 117")
 
     # 设置星空背景
@@ -193,7 +193,7 @@ if page == "Home":
     st.subheader("🌌 Galactic Explorer 117")
     st.markdown(
         """
-        <p style="font-size:40px; line-height:1.6;">
+        <p style="font-size:30px; line-height:1.6;">
         Welcome to our Exoplanet Classifier!  
         <br>Choose one of the modes from the sidebar:
         <br>- **Novice Mode** 🟢 : For beginners, explore planets by entering basic parameters. (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
@@ -499,6 +499,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
