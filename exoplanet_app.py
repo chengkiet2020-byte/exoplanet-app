@@ -169,7 +169,7 @@ if page == "Home":
         st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
     
     with col2: 
-        st.image("https://embarrassed-black-0mvbozhezn.edgeone.app/")
+        st.image("https://imgur.com/a/wgdyC9e")
     st.title("🚀 Exoscan 117")
     
 
@@ -505,6 +505,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
