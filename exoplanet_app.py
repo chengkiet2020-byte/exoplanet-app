@@ -47,8 +47,8 @@ st.markdown(
     }
 
     /* 普通文字 */
-    p, label, span, div {
-        color: green;
+    p, label, div {
+        color: white;
     }
 
     /* 按钮设计 */
@@ -501,6 +501,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
