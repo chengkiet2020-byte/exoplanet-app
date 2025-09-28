@@ -155,12 +155,6 @@ st.markdown("""
 # 加载训练好的模型
 model = pickle.load(open("exoplanet_model.pkl", "rb"))
 
-    # NASA Logo + 标题
-    col1, col2, col3 = st.columns([1, 2, 1])
-
-    with col1:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)
-
 st.set_page_config(page_title="🚀 NASA Exoplanet Classifier", layout="wide")
 
 # --- Sidebar navigation ---
@@ -205,7 +199,7 @@ if page == "Home":
 
 # --- Novice Mode ---
 elif page == "Novice Mode":
-    st.header("🟢 Novice Mode - Quick Classification for Begineer")
+    st.header("🟢 Novice Mode - Quick Classification")
 
     # 设置星空背景
     page_bg_img = """
@@ -228,8 +222,13 @@ elif page == "Novice Mode":
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
+    # NASA Logo + 标题
+    col1, col2, col3 = st.columns([1, 2, 1])
 
+    with col1:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=120)
 
+    st.title("🚀 NASA Exoplanet Classifier")
     st.write("<h3 style='text-align: center; color: white;'>Analyze Kepler exoplanet data and classify candidates into Confirmed, Candidate, or False Positive</h3>", unsafe_allow_html=True)
 
     # 用户输入
