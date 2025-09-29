@@ -194,18 +194,18 @@ if page == "Home":
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-    st.markdown('<span style="color: yellow; font-weight: bold; font-size:35px;">Team: Galactic Explorer 117</span>', unsafe_allow_html=True)
+    st.markdown('<span style="color: red; font-weight: bold; font-size:35px;">Team: Galactic Explorer 117</span>', unsafe_allow_html=True)
 
     st.markdown(
         """
         <p style="font-size:25px; line-height:1.6;">
         Welcome ⭐ to our Exoplanet Classifier🪐! 
         <br> Choose one of the modes from the sidebar:
-        <br> <span style="color: yellow; font-weight: bold;">Novice Mode</span> 🟢 : 
         <br>
+        <br> <span style="color: yellow; font-weight: bold;">1) Novice Mode</span> 🟢 : 
         <br> - For beginners, explore planets by entering basic parameters. (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
-        <br> <span style="color: green; font-weight: bold;">Researcher Mode</span> 🔬 : 
         <br>
+        <br> <span style="color: yellow; font-weight: bold;">2)Researcher Mode</span> 🔬 : 
         <br> - For advanced users, upload datasets, train models, and analyze results. 
  
         """,
@@ -509,6 +509,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
