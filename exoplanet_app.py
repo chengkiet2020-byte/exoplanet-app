@@ -221,7 +221,7 @@ if page == "Home":
     
     # st.title("🚀 Exoscan 117")
 
-st.markdown(
+    st.markdown(
     """
     <h1 style="color: #FFD580; 
                font-size: 80px; 
@@ -795,6 +795,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
