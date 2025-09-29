@@ -369,71 +369,51 @@ elif page == "Researcher Mode":
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-   #  st.markdown(
-   #      """
-   #      <span style="color: white; font-size: 25px; font-weight: bold;"> Here you can upload new datasets, retrain the model, and analyze accuracy.</span> 🔬
+    st.markdown(
+        """
+        <span style="color: white; font-size: 25px; font-weight: bold;"> Here you can upload new datasets, retrain the model, and analyze accuracy.</span> 🔬
 
-   #      """,
-   #      unsafe_allow_html=True
-   #  )
+        """,
+        unsafe_allow_html=True
+    )
 
-   #  st.markdown(
-   #      """
-   #      <style>
-   #      /* File uploader 外框 */
-   #      [data-testid="stFileUploader"] section {
-   #          background-color: #001f3f;   /* 深蓝色背景 */
-   #          border: 1px solid #00BFFF;   /* 浅蓝色边框 */
-   #          border-radius: 8px;
-   #      }
+    st.markdown(
+        """
+        <style>
+        /* File uploader 外框 */
+        [data-testid="stFileUploader"] section {
+            background-color: #001f3f;   /* 深蓝色背景 */
+            border: 1px solid #00BFFF;   /* 浅蓝色边框 */
+            border-radius: 8px;
+        }
 
-   #      /* File uploader 内部文字 */
-   #      [data-testid="stFileUploader"] label,
-   #      [data-testid="stFileUploader"] div,
-   #      [data-testid="stFileUploader"] p {
-   #          color: white !important;   /* 白色字体 */
-   #      }
+        /* File uploader 内部文字 */
+        [data-testid="stFileUploader"] label,
+        [data-testid="stFileUploader"] div,
+        [data-testid="stFileUploader"] p {
+            color: white !important;   /* 白色字体 */
+        }
 
-   #      /* 上传按钮 */
-   #      [data-testid="stFileUploader"] button {
-   #          background-color: #111111;   /* 按钮黑色 */
-   #          color: white !important;     /* 按钮文字白色 */
-   #          border: 1px solid #555555;
-   #          border-radius: 6px;
-   #      }
+        /* 上传按钮 */
+        [data-testid="stFileUploader"] button {
+            background-color: #111111;   /* 按钮黑色 */
+            color: white !important;     /* 按钮文字白色 */
+            border: 1px solid #555555;
+            border-radius: 6px;
+        }
 
-   #      [data-testid="stFileUploader"] button:hover {
-   #          background-color: #222222;   /* hover 时稍微亮一点 */
-   #          border: 1px solid #888888;
-   #      }
-   #      </style>
-   #      """,
-   #      unsafe_allow_html=True
-   #  )
+        [data-testid="stFileUploader"] button:hover {
+            background-color: #222222;   /* hover 时稍微亮一点 */
+            border: 1px solid #888888;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
-   # # 上传器（隐藏默认 label）
-   #  uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
-st.markdown(
-    """
-    <span style="color: white; font-size: 25px; font-weight: bold;"> 
-        Here you can upload new datasets, retrain the model, and analyze accuracy.
-    </span> 🔬
-    """,
-    unsafe_allow_html=True
-)
+   # 上传器（隐藏默认 label）
+    uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
 
-# 在这里插入自定义标题
-st.markdown(
-    """
-    <div style="font-size: 22px; font-weight: bold; color: white; margin-top: 15px; margin-bottom: 8px;">
-        📂 Upload dataset
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-# 上传器（隐藏默认 label）
-uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
 
 # 样式
 st.markdown(
@@ -630,6 +610,7 @@ if uploaded_file is not None:
         unsafe_allow_html=True
 
     )
+
 
 
 
