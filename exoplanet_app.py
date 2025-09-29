@@ -209,10 +209,13 @@ if page == "Home":
     unsafe_allow_html=True
 )
 # logo 图标
-    col_empty, col_left, col_right, col_empty2 = st.columns([2, 2, 1, 2])
+    col_empty, col_left, col_mid, col_right, col_empty2 = st.columns([2, 2, 1, 1, 2])
 
     with col_left:
         st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
+
+    with col_mid:
+        st.image("https://i.imgur.com/AlChOT4.png", width=220) 
     
     with col_right: 
         st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
@@ -795,6 +798,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
