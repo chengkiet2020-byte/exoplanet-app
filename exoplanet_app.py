@@ -357,7 +357,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
     )
 
-    st.markdown(
+   st.markdown(
         """
         <style>
         /* File uploader 外框 */
@@ -389,23 +389,10 @@ elif page == "Researcher Mode":
         </style>
         """,
         unsafe_allow_html=True
-    )       
-import streamlit as st
+    )
 
-# --- 自定义 CSS ---
-st.markdown("""
-    <style>
-    /* 修改上传按钮的 label 样式 */
-    .stFileUploader label {
-        color: white !important;
-        font-size: 20px !important;
-        font-weight: bold !important;
-    }
-    </style>
-""", unsafe_allow_html=True)
+    uploaded_file = st.file_uploader("📂 Upload dataset", type=["csv", "txt", "tsv", "xlsx"])
 
-# --- 文件上传器 ---
-uploaded_file = st.file_uploader("📂 Upload dataset", type=["csv", "txt", "tsv", "xlsx"])
 
 
     if uploaded_file is not None:
@@ -566,6 +553,7 @@ uploaded_file = st.file_uploader("📂 Upload dataset", type=["csv", "txt", "tsv
         unsafe_allow_html=True
 
     )
+
 
 
 
