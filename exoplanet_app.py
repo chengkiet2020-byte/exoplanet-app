@@ -21,7 +21,27 @@ import numpy as np
 #     </style>
 # """, unsafe_allow_html=True)
 
-# 自定义标题（完全由你控制样式）
+st.markdown(
+    """
+    <style>
+    /* 调整 sidebar 收缩按钮 */
+    [data-testid="collapsedControl"] {
+        transform: scale(1.5);   /* 调整大小：1.5 放大，0.8 缩小 */
+        color: yellow !important;   /* 改文字颜色 */
+        background-color: red !important; /* 改背景颜色 */
+        border-radius: 10px;  /* 圆角 */
+    }
+
+    /* 鼠标悬停效果 */
+    [data-testid="collapsedControl"]:hover {
+        background-color: orange !important;
+        color: black !important;
+        transform: scale(1.8);  /* 悬停时更大 */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Custom CSS for gradient dark blue header + sidebar
 st.markdown(
@@ -800,6 +820,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
