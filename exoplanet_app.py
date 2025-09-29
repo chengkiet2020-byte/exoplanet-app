@@ -175,24 +175,21 @@ st.set_page_config(page_title="🚀 NASA Exoplanet Classifier", layout="wide")
 st.sidebar.title("🔭 Menu")
 page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
 
-# 自定义标题
-st.markdown("""
-    <div style="font-size: 28px; font-weight: bold; color: white; margin-bottom: 10px;">
-        📂 Upload dataset
-    </div>
-""", unsafe_allow_html=True)
-
+# 自定义upload dataset
 st.markdown(
     """
     <style>
-    /* 隐藏默认的 file uploader 标题 */
-    [data-testid="stFileUploader"] label {
+    /* 隐藏 file_uploader 默认文字 */
+    [data-testid="stFileUploader"] > div:first-child {
         display: none !important;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
+uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
+
 
 # --- Home Page ---
 if page == "Home":
@@ -721,6 +718,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
