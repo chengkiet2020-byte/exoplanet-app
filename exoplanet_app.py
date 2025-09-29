@@ -398,7 +398,7 @@ elif page == "Researcher Mode":
 
 uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
 
-    if uploaded_file is not None:
+if uploaded_file is not None:
         try:
             data = pd.read_csv(uploaded_file, comment="#", sep=None, engine="python")
             st.success("✅ File loaded successfully!")
@@ -556,6 +556,7 @@ uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
         unsafe_allow_html=True
 
     )
+
 
 
 
