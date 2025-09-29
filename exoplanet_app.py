@@ -321,6 +321,13 @@ elif page == "Novice Mode":
 # --- Researcher Mode ---
 elif page == "Researcher Mode":
     st.header("🔬 Researcher Mode - Advanced Tools")
+    st.markdown(
+        """
+        <span style="color: yellow; font-size: 40px; font-weight: bold;"> 2) Researcher Mode - Advanced Tools</span> 🔬
+
+        """,
+        unsafe_allow_html=True
+    )
 
     # 设置星空背景
     page_bg_img = """
@@ -539,6 +546,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
