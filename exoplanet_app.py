@@ -191,20 +191,14 @@ st.markdown(
 
 # --- Home Page ---
 if page == "Home":
-col1, col2 = st.columns([1, 3])  # 左边放图，右边放标题
+    col1, col2 = st.columns([1, 1])
 
-with col1:
-    st.image("https://i.imgur.com/TL2RXUL.png", width=220)
-
-with col2:
-    st.markdown(
-        """
-        <h1 style="color: #FFD580; font-size: 80px; font-weight: bold; margin-top:30px;">
-            Exoscan 117 🚀
-        </h1>
-        """,
-        unsafe_allow_html=True
-    )
+    with col1:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
+    
+    with col2: 
+        st.markdown("<div style='margin-left:50px'></div>", unsafe_allow_html=True)  # 加空白
+        st.image("https://i.imgur.com/xxxxx.png", width=250)
 
     
     # st.title("🚀 Exoscan 117")
@@ -727,6 +721,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
