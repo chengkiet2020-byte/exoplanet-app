@@ -83,7 +83,7 @@ st.markdown(
         background-color: #111111;
         color: white !important;
         border: 1px solid #1E90FF;
-        border-radius: 15px;
+        border-radius: 30px;
     }
 
     /* 下拉菜单 */
@@ -800,6 +800,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
