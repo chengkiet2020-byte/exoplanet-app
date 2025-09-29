@@ -196,15 +196,16 @@ if page == "Home":
     with col1:
         st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
     
-    with col2: 
-        st.markdown("<div style='margin-left:50px'></div>", unsafe_allow_html=True)  # 加空白
-        st.image("https://i.imgur.com/TL2RXUL.png", width=220)
+    # with col2: 
+    #     st.markdown("<div style='margin-left:50px'></div>", unsafe_allow_html=True)  # 加空白
+    #     st.image("https://i.imgur.com/TL2RXUL.png", width=220)
     
     # st.title("🚀 Exoscan 117")
     st.markdown(
     """
-    <h1 style="color: #FFD580; font-size: 80px; font-weight: bold;">
-        🚀 Exoscan 117
+    st.markdown("<div style='margin-left:50px'></div>", unsafe_allow_html=True)  # 加空白
+        st.image("https://i.imgur.com/TL2RXUL.png", width=220)；<h1 style="color: #FFD580; font-size: 80px; font-weight: bold;">
+         Exoscan 117 🚀
     </h1>
     """,
     unsafe_allow_html=True
@@ -718,6 +719,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
