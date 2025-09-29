@@ -188,8 +188,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
-
 
 # --- Home Page ---
 if page == "Home":
@@ -718,6 +716,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
