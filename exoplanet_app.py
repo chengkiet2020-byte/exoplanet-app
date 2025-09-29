@@ -194,7 +194,18 @@ if page == "Home":
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-    st.markdown('<span style="color: red; font-weight: bold; font-size:35px;">Team: Galactic Explorer 117</span>', unsafe_allow_html=True)
+    # st.markdown('<span style="color: red; font-weight: bold; font-size:35px;">Team: Galactic Explorer 117</span>', unsafe_allow_html=True)
+    st.markdown(
+    """
+    <span style="color: red; font-weight: bold; font-size:35px;">
+        Team: Galactic Explorer 
+        <span style="display:inline-block; border: 2px solid red; padding: 5px 15px; border-radius: 8px; margin-left:10px; font-size:28px; color: red;">
+            117
+        </span>
+    </span>
+    """,
+    unsafe_allow_html=True
+)
 
     st.markdown(
         """
@@ -509,6 +520,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
