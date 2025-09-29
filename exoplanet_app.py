@@ -276,11 +276,11 @@ if page == "Home":
         Welcome ⭐ to our Exoplanet Classifier🪐! 
         <br> Choose one of the modes from the sidebar:
         <br>
-        <br> <span style="color: yellow; display:inline-block; border: 2px solid white; background-color: white; padding: 8px 20px; border-radius: 10px; font-weight: bold;">1) Novice Mode</span> 🟢 : 
+        <br> <span style="color: yellow; display:inline-block; border: 2px solid blue; background-color: blue; padding: 8px 20px; border-radius: 10px; font-weight: bold;">1) Novice Mode</span> 🟢 : 
         <br> - For beginners, explore planets by entering basic parameters. 
         <br>   (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
         <br>
-        <br> <span style="color: yellow; font-weight: bold;">2) Researcher Mode</span> 🔬 : 
+        <br> <span style="color: yellow; display:inline-block; border: 2px solid blue; background-color: blue; padding: 8px 20px; border-radius: 10px; font-weight: bold;">2) Researcher Mode</span> 🔬 : 
         <br> - For advanced users, upload datasets, train models, and analyze results. 
  
         """,
@@ -739,6 +739,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
