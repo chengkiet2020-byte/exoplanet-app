@@ -191,7 +191,7 @@ st.markdown(
 
 # --- Home Page ---
 if page == "Home":
-    col1, col2, col3 = st.columns([1, 1])
+    col1, col2 = st.columns([1, 1])
 
     with col1:
         st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
@@ -718,6 +718,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
