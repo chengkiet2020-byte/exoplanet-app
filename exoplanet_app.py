@@ -472,7 +472,7 @@ st.markdown(
 
 
 
-    if uploaded_file is not None:
+if uploaded_file is not None:
         try:
             data = pd.read_csv(uploaded_file, comment="#", sep=None, engine="python")
             st.success("✅ File loaded successfully!")
@@ -630,6 +630,7 @@ st.markdown(
         unsafe_allow_html=True
 
     )
+
 
 
 
