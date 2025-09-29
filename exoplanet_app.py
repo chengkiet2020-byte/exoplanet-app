@@ -198,7 +198,8 @@ if page == "Home":
     st.markdown(
     """
     <span style="display:inline-block; 
-                 border: 2px solid red; 
+                 border: 2px solid white;
+                 background-color: white;
                  padding: 8px 20px; 
                  border-radius: 10px; 
                  font-size:35px; 
@@ -523,6 +524,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
