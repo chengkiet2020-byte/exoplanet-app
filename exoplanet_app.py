@@ -240,7 +240,7 @@ if page == "Home":
 elif page == "Novice Mode":
     st.markdown(
         """
-        <span style="color: yellow; font-weight: bold;">1) Novice Mode - Quick Qualification</span> 🟢
+        <span style="color: yellow; font-size: 40px; font-weight: bold;">1) Novice Mode - Quick Qualification</span> 🟢
 
         """,
         unsafe_allow_html=True
@@ -539,6 +539,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
