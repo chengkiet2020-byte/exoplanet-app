@@ -215,6 +215,7 @@ if page == "Home":
         st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
 
     with col_mid:
+        st.markdown("<div style='margin-top:40px'></div>", unsafe_allow_html=True)
         st.image("https://i.imgur.com/06k5Rjl.jpeg", width=1220) 
     
     with col_right: 
@@ -798,6 +799,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
