@@ -321,9 +321,19 @@ if page == "Home":
                  color: yellow;">
         1) Novice Mode 🟢
     </span>
-    <br> - For beginners, explore planets by entering basic parameters. 
-    <br>   (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>)
+    <br> <span style="font-size:25px;">- For beginners, explore planets by entering basic parameters.</span> 
+    <br> <span style="font-size:25px;">  (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>)</span>
     <br><br> 
+    
+    <!-- Researcher Mode 按钮式标签 -->
+    <span style="display:inline-block; 
+                 border: 2px solid #1E90FF; 
+                 background-color: #00008B; 
+                 padding: 8px 20px; 
+                 border-radius: 10px; 
+                 font-weight: bold; 
+                 font-size: 30px; 
+                 color: yellow;">
     
     <!-- Researcher Mode 按钮式标签 -->
     <span style="display:inline-block; 
@@ -336,7 +346,7 @@ if page == "Home":
                  color: yellow;">
         2) Researcher Mode 🔬
     </span>
-    <br> - For advanced users, upload datasets, train models, and analyze results. 
+    <br> <span style="font-size:25px;">- For advanced users, upload datasets, train models, and analyze results.</span> 
     </p>
     """,
     unsafe_allow_html=True
@@ -795,6 +805,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
