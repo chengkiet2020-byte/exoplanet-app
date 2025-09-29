@@ -199,8 +199,8 @@ if page == "Home":
     st.markdown(
         """
         <p style="font-size:30px; line-height:1.6;">
-        Welcome ⭐ to our Exoplanet Classifier🪐! Choose one of the modes from the sidebar:
-        <br>
+        Welcome ⭐ to our Exoplanet Classifier🪐! 
+        <br> Choose one of the modes from the sidebar:
         <br> <span style="color: yellow; font-weight: bold;">Novice Mode</span> 🟢 : For beginners, explore planets by entering basic parameters. (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
         <br>
         <br> <span style="color: green; font-weight: bold;">Researcher Mode</span> 🔬 : For advanced users, upload datasets, train models, and analyze results. 
@@ -506,6 +506,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
