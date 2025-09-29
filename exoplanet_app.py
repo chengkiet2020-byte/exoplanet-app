@@ -287,7 +287,7 @@ if page == "Home":
 #         unsafe_allow_html=True
 #     )
 
-    st.matkdown(
+    st.markdown(
     """
     <span style="display:inline-block; 
                  border: 2px solid white;
@@ -795,6 +795,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
