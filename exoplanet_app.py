@@ -170,7 +170,15 @@ if page == "Home":
     
     with col2: 
         st.image("https://imgur.com/a/wgdyC9e")
-    st.title("🚀 Exoscan 117")
+    # st.title("🚀 Exoscan 117")
+    st.markdown(
+    """
+    <h1 style="color: light orange; font-size: 60px; font-weight: bold;">
+        🚀 Exoscan 117
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
     
 
     # 设置星空背景
@@ -220,6 +228,7 @@ if page == "Home":
         <br> <span style="color: yellow; font-weight: bold;">1) Novice Mode</span> 🟢 : 
         <br> - For beginners, explore planets by entering basic parameters. 
         <br>   (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
+        <br>
         <br> <span style="color: yellow; font-weight: bold;">2)Researcher Mode</span> 🔬 : 
         <br> - For advanced users, upload datasets, train models, and analyze results. 
  
@@ -524,6 +533,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
