@@ -238,7 +238,7 @@ if page == "Home":
     page_bg_img = """
     <style>
     [data-testid="stAppViewContainer"] {
-        background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
+        background-image: url("https://exoplanets.nasa.gov/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdVlJIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f2f515b043e84637caa53c9b71030e2d0c5baac1/exo20180301-home.jpg?disposition=inline");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -795,6 +795,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
