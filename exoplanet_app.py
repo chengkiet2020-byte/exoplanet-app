@@ -24,30 +24,33 @@ import numpy as np
 st.markdown(
     """
     <style>
-    /* 修改 sidebar 折叠按钮大小 + 颜色 */
-    [data-testid="collapsedControl"] svg {
-        width: 40px;   /* 调整宽度 */
-        height: 40px;  /* 调整高度 */
-        fill: yellow;  /* 改图标颜色 */
-        stroke: yellow;  /* 有些 SVG 用 stroke 画 */
-    }
-
-    /* 调整按钮容器背景 */
+    /* 控制折叠箭头容器 */
     [data-testid="collapsedControl"] {
-        background-color: red !important;
-        border-radius: 10px;
+        background-color: #222 !important;  /* 改背景 */
+        border-radius: 8px !important;      /* 圆角 */
+        padding: 6px !important;            /* 内边距 */
+        margin-top: 50px !important;        /* 往下移 */
     }
 
-    /* 悬停效果 */
+    /* 控制里面的 SVG 图标 */
+    [data-testid="collapsedControl"] svg {
+        width: 32px !important;   /* 放大 */
+        height: 32px !important;
+        fill: yellow !important;  /* 填充颜色 */
+        stroke: yellow !important;
+    }
+
+    /* 鼠标悬停效果 */
     [data-testid="collapsedControl"]:hover svg {
-        fill: black;
-        stroke: black;
-        transform: scale(1.2);
+        fill: red !important;
+        stroke: red !important;
+        transform: scale(1.3) !important;  /* 鼠标放大 */
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 
 # Custom CSS for gradient dark blue header + sidebar
@@ -827,6 +830,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
