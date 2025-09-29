@@ -218,6 +218,38 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown(
+    """
+    <style>
+    /* 通用匹配 sidebar 折叠箭头容器 */
+    div[data-testid="collapsedControl"],
+    div[data-testid="stSidebarCollapseButton"] {
+        margin-top: 40px !important;   /* 往下移 */
+    }
+
+    /* 修改按钮本体 */
+    div[data-testid="collapsedControl"] button,
+    div[data-testid="stSidebarCollapseButton"] button {
+        background-color: #222 !important;
+        border-radius: 8px !important;
+        padding: 6px !important;
+    }
+
+    /* 修改箭头 svg */
+    div[data-testid="collapsedControl"] button svg,
+    div[data-testid="stSidebarCollapseButton"] button svg {
+        width: 36px !important;   /* 放大箭头 */
+        height: 36px !important;
+        fill: yellow !important;  /* 填充颜色 */
+        stroke: yellow !important;
+    }
+
+    /* 悬停效果 */
+    div[data-testid="collapsedControl"] button:hover svg,
+    div[data-testid="stSidebarCollapseButton"] button:hover svg {
+        fill: red !important;
+        stroke: red !important;
+        transform: scale(1.
 
 # --- Home Page ---
 if page == "Home":
@@ -830,6 +862,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
