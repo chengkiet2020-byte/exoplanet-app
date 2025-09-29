@@ -191,6 +191,24 @@ st.markdown(
 
 # --- Home Page ---
 if page == "Home":
+# 链接自定义
+    st.markdown(
+    """
+    <style>
+    a {
+        color: orange !important;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a:hover {
+        color: red !important;
+        text-decoration: underline;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+# logo 图标
     col1, col2 = st.columns([1, 1])
 
     with col1:
@@ -721,6 +739,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
