@@ -357,7 +357,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
     )
 
-   st.markdown(
+    st.markdown(
         """
         <style>
         /* File uploader 外框 */
@@ -553,6 +553,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
