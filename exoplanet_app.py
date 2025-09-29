@@ -332,7 +332,7 @@ if page == "Home":
                  padding: 8px 20px; 
                  border-radius: 10px; 
                  font-weight: bold; 
-                 font-size: 22px; 
+                 font-size: 30px; 
                  color: yellow;">
         2) Researcher Mode 🔬
     </span>
@@ -795,6 +795,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
