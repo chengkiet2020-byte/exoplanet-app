@@ -9,14 +9,35 @@ import pickle
 import joblib
 import numpy as np
 
-# --- 自定义 CSS ---
+# # --- 自定义 CSS ---
+# st.markdown("""
+#     <style>
+#     /* 修改上传按钮的 label 样式 */
+#     .stFileUploader label {
+#         color: white !important;
+#         font-size: 20px !important;
+#         font-weight: bold !important;
+#     }
+#     </style>
+# """, unsafe_allow_html=True)
+
+# 自定义标题（完全由你控制样式）
 st.markdown("""
+    <div style="
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    ">
+        📂 Upload dataset
+    </div>
     <style>
-    /* 修改上传按钮的 label 样式 */
-    .stFileUploader label {
-        color: white !important;
-        font-size: 20px !important;
-        font-weight: bold !important;
+    /* 可额外美化 uploader 的外框 */
+    div[data-testid="stFileUploader"] section {
+        background-color: #111 !important;
+        border: 2px dashed #00BFFF !important;
+        border-radius: 10px !important;
+        padding: 8px !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -565,6 +586,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
