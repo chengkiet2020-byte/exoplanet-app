@@ -216,7 +216,7 @@ if page == "Home":
     
     with col2: 
         st.markdown("<div style='margin-left:50px'></div>", unsafe_allow_html=True)  # 加空白
-        st.image("https://i.imgur.com/TL2RXUL.png", width=250)
+        st.image("https://i.imgur.com/TL2RXUL.png", width=220)
 
     
     # st.title("🚀 Exoscan 117")
@@ -739,6 +739,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
