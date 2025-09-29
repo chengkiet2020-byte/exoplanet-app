@@ -209,7 +209,7 @@ if page == "Home":
     unsafe_allow_html=True
 )
 # logo 图标
-    col1, col2 = st.columns([5, 1])
+    col1, col2 = st.columns([2, 1, 1, 2])
 
     with col1:
         st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
@@ -795,6 +795,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
