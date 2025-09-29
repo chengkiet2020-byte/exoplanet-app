@@ -229,7 +229,7 @@ if page == "Home":
         <br> - For beginners, explore planets by entering basic parameters. 
         <br>   (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
         <br>
-        <br> <span style="color: yellow; font-weight: bold;">2)Researcher Mode</span> 🔬 : 
+        <br> <span style="color: yellow; font-weight: bold;">2) Researcher Mode</span> 🔬 : 
         <br> - For advanced users, upload datasets, train models, and analyze results. 
  
         """,
@@ -238,7 +238,13 @@ if page == "Home":
 
 # --- Novice Mode ---
 elif page == "Novice Mode":
-    st.header("🟢 Novice Mode - Quick Classification")
+    st.markdown(
+        """
+        <span style="color: yellow; font-weight: bold;">1) Novice Mode - Quick Qualification</span> 🟢
+
+        """,
+        unsafe_allow_html=True
+    )
 
     # 设置星空背景
     page_bg_img = """
@@ -533,6 +539,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
