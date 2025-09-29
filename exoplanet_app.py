@@ -212,7 +212,7 @@ if page == "Home":
     col1, col2 = st.columns([2, 1])
 
     with col1:
-        st.markdown("<div style='margin-left:300px'></div>", unsafe_allow_html=True)
+        st.markdown("<div style='margin-left:1000px'></div>", unsafe_allow_html=True)
         st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
     
     with col2: 
@@ -796,6 +796,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
