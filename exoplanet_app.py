@@ -195,7 +195,7 @@ if page == "Home":
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
     # st.markdown('<span style="color: red; font-weight: bold; font-size:35px;">Team: Galactic Explorer 117</span>', unsafe_allow_html=True)
-st.markdown(
+    st.markdown(
     """
     <span style="display:inline-block; 
                  border: 2px solid red; 
@@ -210,7 +210,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown(
+    st.markdown(
         """
         <p style="font-size:25px; line-height:1.6;">
         Welcome ⭐ to our Exoplanet Classifier🪐! 
@@ -523,6 +523,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
