@@ -597,7 +597,7 @@ if uploaded_file is not None:
         except Exception as e:
             st.error(f"❌ Could not read file: {e}")
     
-    st.markdown(
+     st.markdown(
         """
         **Or train using NASA datasets:**
 
@@ -610,6 +610,7 @@ if uploaded_file is not None:
         unsafe_allow_html=True
 
     )
+
 
 
 
