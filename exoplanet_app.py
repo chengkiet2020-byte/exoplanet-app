@@ -287,7 +287,7 @@ if page == "Home":
 #         unsafe_allow_html=True
 #     )
 
-    st.markdown(
+st.markdown(
     """
     <span style="display:inline-block; 
                  border: 2px solid white;
@@ -303,9 +303,9 @@ if page == "Home":
     unsafe_allow_html=True
 )
 
-    st.markdown(
+st.markdown(
     """
-    <p style="font-size:25px; line-height:1.6; color: white;">
+    <p style="font-size:30px; line-height:1.6; color: white;">
     Welcome ⭐ to our Exoplanet Classifier🪐! 
     <br> Choose one of the modes from the sidebar:
     <br><br> 
@@ -317,12 +317,12 @@ if page == "Home":
                  padding: 8px 20px; 
                  border-radius: 10px; 
                  font-weight: bold; 
-                 font-size: 22px; 
+                 font-size: 30px; 
                  color: yellow;">
         1) Novice Mode 🟢
     </span>
-    <br> - For beginners, explore planets by entering basic parameters. 
-    <br>   (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>)
+    <br> <span style="font-size:25px;">- For beginners, explore planets by entering basic parameters.</span> 
+    <br> <span style="font-size:25px;">  (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>)</span>
     <br><br> 
     
     <!-- Researcher Mode 按钮式标签 -->
@@ -336,11 +336,12 @@ if page == "Home":
                  color: yellow;">
         2) Researcher Mode 🔬
     </span>
-    <br> - For advanced users, upload datasets, train models, and analyze results. 
+    <br> <span style="font-size:25px;">- For advanced users, upload datasets, train models, and analyze results.</span> 
     </p>
     """,
     unsafe_allow_html=True
 )
+
 
 
 # --- Novice Mode ---
@@ -795,6 +796,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
