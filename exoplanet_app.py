@@ -35,7 +35,7 @@ st.markdown(
 
     /* 左侧 Sidebar 渐变 */
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #00264d, #004080);
+        background: linear-gradient(270deg, #00264d, #004080);
         color: white;
     }
     </style>
@@ -800,6 +800,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
