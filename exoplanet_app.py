@@ -287,7 +287,7 @@ if page == "Home":
 #         unsafe_allow_html=True
 #     )
 
-st.matkdown(
+    st.matkdown(
     """
     <span style="display:inline-block; 
                  border: 2px solid white;
@@ -303,7 +303,7 @@ st.matkdown(
     unsafe_allow_html=True
 )
 
-st.markdown(
+    st.markdown(
     """
     <p style="font-size:25px; line-height:1.6; color: white;">
     Welcome ⭐ to our Exoplanet Classifier🪐! 
@@ -795,6 +795,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
