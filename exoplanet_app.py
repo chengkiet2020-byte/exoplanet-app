@@ -209,7 +209,7 @@ if page == "Home":
     unsafe_allow_html=True
 )
 # logo 图标
-    col1, col2 = st.columns([2, 1])
+    col1, col2 = st.columns([5, 1])
 
     with col1:
         st.markdown("<div style='margin-left:3000px'></div>", unsafe_allow_html=True)
@@ -796,6 +796,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
