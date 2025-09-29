@@ -24,24 +24,31 @@ import numpy as np
 st.markdown(
     """
     <style>
-    /* 调整 sidebar 收缩按钮 */
-    [data-testid="collapsedControl"] {
-        transform: scale(1.5);   /* 调整大小：1.5 放大，0.8 缩小 */
-        color: yellow !important;   /* 改文字颜色 */
-        background-color: red !important; /* 改背景颜色 */
-        border-radius: 10px;  /* 圆角 */
+    /* 修改 sidebar 折叠按钮大小 + 颜色 */
+    [data-testid="collapsedControl"] svg {
+        width: 40px;   /* 调整宽度 */
+        height: 40px;  /* 调整高度 */
+        fill: yellow;  /* 改图标颜色 */
+        stroke: yellow;  /* 有些 SVG 用 stroke 画 */
     }
 
-    /* 鼠标悬停效果 */
-    [data-testid="collapsedControl"]:hover {
-        background-color: orange !important;
-        color: black !important;
-        transform: scale(1.8);  /* 悬停时更大 */
+    /* 调整按钮容器背景 */
+    [data-testid="collapsedControl"] {
+        background-color: red !important;
+        border-radius: 10px;
+    }
+
+    /* 悬停效果 */
+    [data-testid="collapsedControl"]:hover svg {
+        fill: black;
+        stroke: black;
+        transform: scale(1.2);
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 # Custom CSS for gradient dark blue header + sidebar
 st.markdown(
@@ -820,6 +827,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
