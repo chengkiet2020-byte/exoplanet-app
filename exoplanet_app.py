@@ -254,7 +254,40 @@ if page == "Home":
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
     # 队名框框
-    st.markdown(
+#     st.markdown(
+#     """
+#     <span style="display:inline-block; 
+#                  border: 2px solid white;
+#                  background-color: white;
+#                  padding: 8px 20px; 
+#                  border-radius: 10px; 
+#                  font-size:35px; 
+#                  font-weight: bold; 
+#                  color: red;">
+#         Team: Galactic Explorer 117
+#     </span>
+#     """,
+#     unsafe_allow_html=True
+# )
+
+#     st.markdown(
+#         """
+#         <p style="font-size:25px; line-height:1.6;">
+#         Welcome ⭐ to our Exoplanet Classifier🪐! 
+#         <br> Choose one of the modes from the sidebar:
+#         <br>
+#         <br> <span style="color: yellow; display:inline-block; border: 2px solid blue; background-color: blue; padding: 8px 20px; border-radius: 10px; font-weight: bold;">1) Novice Mode</span> 🟢 : 
+#         <br> - For beginners, explore planets by entering basic parameters. 
+#         <br>   (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
+#         <br>
+#         <br> <span style="color: yellow; display:inline-block; border: 2px solid blue; background-color: blue; padding: 8px 20px; border-radius: 10px; font-weight: bold;">2) Researcher Mode</span> 🔬 : 
+#         <br> - For advanced users, upload datasets, train models, and analyze results. 
+ 
+#         """,
+#         unsafe_allow_html=True
+#     )
+
+st.matkdown(
     """
     <span style="display:inline-block; 
                  border: 2px solid white;
@@ -270,22 +303,45 @@ if page == "Home":
     unsafe_allow_html=True
 )
 
-    st.markdown(
-        """
-        <p style="font-size:25px; line-height:1.6;">
-        Welcome ⭐ to our Exoplanet Classifier🪐! 
-        <br> Choose one of the modes from the sidebar:
-        <br>
-        <br> <span style="color: yellow; display:inline-block; border: 2px solid blue; background-color: blue; padding: 8px 20px; border-radius: 10px; font-weight: bold;">1) Novice Mode</span> 🟢 : 
-        <br> - For beginners, explore planets by entering basic parameters. 
-        <br>   (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
-        <br>
-        <br> <span style="color: yellow; display:inline-block; border: 2px solid blue; background-color: blue; padding: 8px 20px; border-radius: 10px; font-weight: bold;">2) Researcher Mode</span> 🔬 : 
-        <br> - For advanced users, upload datasets, train models, and analyze results. 
- 
-        """,
-        unsafe_allow_html=True
-    )
+st.markdown(
+    """
+    <p style="font-size:25px; line-height:1.6; color: white;">
+    Welcome ⭐ to our Exoplanet Classifier🪐! 
+    <br> Choose one of the modes from the sidebar:
+    <br><br> 
+    
+    <!-- Novice Mode 按钮式标签 -->
+    <span style="display:inline-block; 
+                 border: 2px solid #00FF00; 
+                 background-color: #006400; 
+                 padding: 8px 20px; 
+                 border-radius: 10px; 
+                 font-weight: bold; 
+                 font-size: 22px; 
+                 color: yellow;">
+        1) Novice Mode 🟢
+    </span>
+    <br> - For beginners, explore planets by entering basic parameters. 
+    <br>   (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>)
+    <br><br> 
+    
+    <!-- Researcher Mode 按钮式标签 -->
+    <span style="display:inline-block; 
+                 border: 2px solid #1E90FF; 
+                 background-color: #00008B; 
+                 padding: 8px 20px; 
+                 border-radius: 10px; 
+                 font-weight: bold; 
+                 font-size: 22px; 
+                 color: yellow;">
+        2) Researcher Mode 🔬
+    </span>
+    <br> - For advanced users, upload datasets, train models, and analyze results. 
+    </p>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # --- Novice Mode ---
 elif page == "Novice Mode":
@@ -739,6 +795,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
