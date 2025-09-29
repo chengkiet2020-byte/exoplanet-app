@@ -303,69 +303,45 @@ if page == "Home":
     unsafe_allow_html=True
 )
 
-if page == "Home":
-    col1, col2, col3 = st.columns([1,2,1])  # 居中
-
-    with col2:
-        st.markdown(
-            """
-            <div style="text-align: center;">
-                <h1 style="font-size:40px; color:white;">Exoscan 117 🚀</h1>
-                <h2 style="font-size:30px; color:red;">Team: Galactic Explorer 117</h2>
-                <p style="font-size:25px; color:white;">
-                Welcome ⭐ to our Exoplanet Classifier🪐!<br>
-                Choose one of the modes from the sidebar:
-                </p>
-
-                <!-- Novice Mode -->
-                <span style="display:inline-block; 
-                             border: 2px solid #00FF00; 
-                             background-color: #006400; 
-                             padding: 8px 20px; 
-                             border-radius: 10px; 
-                             font-weight: bold; 
-                             font-size: 30px; 
-                             color: yellow;">
-                    1) Novice Mode 🟢
-                </span>
-                <br> <span style="font-size:25px;">- For beginners, explore planets by entering basic parameters.</span> 
-                <br> <span style="font-size:25px;">(Default dataset: 🔗 
-                    <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>)
-                </span>
-                <br><br> 
-
-                <!-- Researcher Mode -->
-                <span style="display:inline-block; 
-                             border: 2px solid #1E90FF; 
-                             background-color: #00008B; 
-                             padding: 8px 20px; 
-                             border-radius: 10px; 
-                             font-weight: bold; 
-                             font-size: 30px; 
-                             color: yellow;">
-                    2) Researcher Mode 🔬
-                </span>
-                <br> <span style="font-size:25px;">- For advanced users, upload datasets, train models, and analyze results.</span> 
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-
-col1, col2, col3 = st.columns([1,2,1])  # 左1, 中2, 右1
-
-with col2:
     st.markdown(
-        """
-        <h1 style="font-size:40px; color:white;">Exoscan 117 🚀</h1>
-        <h2 style="font-size:30px; color:red;">Team: Galactic Explorer 117</h2>
-        <p style="font-size:25px; color:white;">
-        Welcome ⭐ to our Exoplanet Classifier🪐!<br>
-        Choose one of the modes from the sidebar:
-        </p>
-        """,
-        unsafe_allow_html=True
-    )
+    """
+    <p style="font-size:30px; line-height:1.6; color: white;">
+    Welcome ⭐ to our Exoplanet Classifier🪐! 
+    <br> Choose one of the modes from the sidebar:
+    <br><br> 
+    
+    <!-- Novice Mode 按钮式标签 -->
+    <span style="display:inline-block; 
+                 border: 2px solid #00FF00; 
+                 background-color: #006400; 
+                 padding: 8px 20px; 
+                 border-radius: 10px; 
+                 font-weight: bold; 
+                 font-size: 30px; 
+                 color: yellow;">
+        1) Novice Mode 🟢
+    </span>
+    <br> - For beginners, explore planets by entering basic parameters. 
+    <br>   (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>)
+    <br><br> 
+    
+    <!-- Researcher Mode 按钮式标签 -->
+    <span style="display:inline-block; 
+                 border: 2px solid #1E90FF; 
+                 background-color: #00008B; 
+                 padding: 8px 20px; 
+                 border-radius: 10px; 
+                 font-weight: bold; 
+                 font-size: 30px; 
+                 color: yellow;">
+        2) Researcher Mode 🔬
+    </span>
+    <br> - For advanced users, upload datasets, train models, and analyze results. 
+    </p>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # --- Novice Mode ---
 elif page == "Novice Mode":
@@ -819,6 +795,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
