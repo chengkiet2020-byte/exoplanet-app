@@ -22,24 +22,11 @@ import numpy as np
 # """, unsafe_allow_html=True)
 
 # 自定义标题（完全由你控制样式）
+# 自定义标题
 st.markdown("""
-    <div style="
-        color: white;
-        font-size: 20px;
-        font-weight: 700;
-        margin-bottom: 8px;
-    ">
+    <div style="font-size: 28px; font-weight: bold; color: white; margin-bottom: 10px;">
         📂 Upload dataset
     </div>
-    <style>
-    /* 可额外美化 uploader 的外框 */
-    div[data-testid="stFileUploader"] section {
-        background-color: #111 !important;
-        border: 2px dashed #00BFFF !important;
-        border-radius: 10px !important;
-        padding: 8px !important;
-    }
-    </style>
 """, unsafe_allow_html=True)
 
 # Custom CSS for gradient dark blue header + sidebar
@@ -424,7 +411,8 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
     )
 
-    uploaded_file = st.file_uploader("📂 Upload dataset", type=["csv", "txt", "tsv", "xlsx"])
+   # 上传器（隐藏默认 label）
+    uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
 
 
 
@@ -586,6 +574,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
