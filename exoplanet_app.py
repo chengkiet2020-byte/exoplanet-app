@@ -9,6 +9,18 @@ import pickle
 import joblib
 import numpy as np
 
+# --- 自定义 CSS ---
+st.markdown("""
+    <style>
+    /* 修改上传按钮的 label 样式 */
+    .stFileUploader label {
+        color: white !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # Custom CSS for gradient dark blue header + sidebar
 st.markdown(
     """
@@ -553,6 +565,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
