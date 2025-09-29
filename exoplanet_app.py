@@ -191,13 +191,13 @@ st.markdown(
 
 # --- Home Page ---
 if page == "Home":
-    col1, col2, col3 = st.columns([1, 0.5, 1.5])
+    col1, col2, col3 = st.columns([1, 2, 1])
 
     with col1:
         st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
     
     with col2: 
-        st.image("https://i.imgur.com/TL2RXUL.png", width=250)
+        st.image("https://i.imgur.com/TL2RXUL.png", width=300)
     # st.title("🚀 Exoscan 117")
     st.markdown(
     """
@@ -716,6 +716,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
