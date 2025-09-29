@@ -320,7 +320,6 @@ elif page == "Novice Mode":
 
 # --- Researcher Mode ---
 elif page == "Researcher Mode":
-    st.header("🔬 Researcher Mode - Advanced Tools")
     st.markdown(
         """
         <span style="color: yellow; font-size: 40px; font-weight: bold;"> 2) Researcher Mode - Advanced Tools</span> 🔬
@@ -546,6 +545,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
