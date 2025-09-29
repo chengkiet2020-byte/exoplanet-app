@@ -22,12 +22,6 @@ import numpy as np
 # """, unsafe_allow_html=True)
 
 # 自定义标题（完全由你控制样式）
-# 自定义标题
-st.markdown("""
-    <div style="font-size: 28px; font-weight: bold; color: white; margin-bottom: 10px;">
-        📂 Upload dataset
-    </div>
-""", unsafe_allow_html=True)
 
 # Custom CSS for gradient dark blue header + sidebar
 st.markdown(
@@ -178,8 +172,15 @@ model = pickle.load(open("exoplanet_model.pkl", "rb"))
 st.set_page_config(page_title="🚀 NASA Exoplanet Classifier", layout="wide")
 
 # --- Sidebar navigation ---
-st.sidebar.title("🔭 Navigation")
+st.sidebar.title("🔭 Menu")
 page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
+
+# 自定义标题
+st.markdown("""
+    <div style="font-size: 28px; font-weight: bold; color: white; margin-bottom: 10px;">
+        📂 Upload dataset
+    </div>
+""", unsafe_allow_html=True)
 
 # --- Home Page ---
 if page == "Home":
@@ -708,6 +709,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
