@@ -339,14 +339,279 @@ elif page == "Novice Mode":
             """)
 
 # --- Researcher Mode ---
-elif page == "Researcher Mode":
-    st.markdown(
-        """
-        <span style="color: yellow; font-size: 40px; font-weight: bold;"> 2) Researcher Mode - Advanced Tools</span> 🔬
+# elif page == "Researcher Mode":
+#     st.markdown(
+#         """
+#         <span style="color: yellow; font-size: 40px; font-weight: bold;"> 2) Researcher Mode - Advanced Tools</span> 🔬
 
-        """,
-        unsafe_allow_html=True
-    )
+#         """,
+#         unsafe_allow_html=True
+#     )
+
+#     # 设置星空背景
+#     page_bg_img = """
+#     <style>
+#     [data-testid="stAppViewContainer"] {
+#         background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
+#         background-size: cover;
+#         background-position: center;
+#         background-repeat: no-repeat;
+#     }
+
+#     [data-testid="stHeader"] {
+#         #background: rgba(0,0,0,0); /* 顶部透明 */
+#     }
+
+#     [data-testid="stToolbar"] {
+#         right: 2rem;
+#     }
+#     </style>
+#     """
+#     st.markdown(page_bg_img, unsafe_allow_html=True)
+
+#     st.markdown(
+#         """
+#         <span style="color: white; font-size: 25px; font-weight: bold;"> Here you can upload new datasets, retrain the model, and analyze accuracy.</span> 🔬
+
+#         """,
+#         unsafe_allow_html=True
+#     )
+
+#     st.markdown(
+#         """
+#         <style>
+#         /* File uploader 外框 */
+#         [data-testid="stFileUploader"] section {
+#             background-color: #001f3f;   /* 深蓝色背景 */
+#             border: 1px solid #00BFFF;   /* 浅蓝色边框 */
+#             border-radius: 8px;
+#         }
+
+#         /* File uploader 内部文字 */
+#         [data-testid="stFileUploader"] label,
+#         [data-testid="stFileUploader"] div,
+#         [data-testid="stFileUploader"] p {
+#             color: white !important;   /* 白色字体 */
+#         }
+
+#         /* 上传按钮 */
+#         [data-testid="stFileUploader"] button {
+#             background-color: #111111;   /* 按钮黑色 */
+#             color: white !important;     /* 按钮文字白色 */
+#             border: 1px solid #555555;
+#             border-radius: 6px;
+#         }
+
+#         [data-testid="stFileUploader"] button:hover {
+#             background-color: #222222;   /* hover 时稍微亮一点 */
+#             border: 1px solid #888888;
+#         }
+#         </style>
+#         """,
+#         unsafe_allow_html=True
+#     )
+
+#    # 上传器（隐藏默认 label）
+#     uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
+
+
+# # 样式
+# st.markdown(
+#     """
+#     <style>
+#     /* File uploader 外框 */
+#     [data-testid="stFileUploader"] section {
+#         background-color: #001f3f;   /* 深蓝色背景 */
+#         border: 1px solid #00BFFF;   /* 浅蓝色边框 */
+#         border-radius: 8px;
+#     }
+
+#     /* File uploader 内部文字 */
+#     [data-testid="stFileUploader"] label,
+#     [data-testid="stFileUploader"] div,
+#     [data-testid="stFileUploader"] p {
+#         color: white !important;   /* 白色字体 */
+#     }
+
+#     /* 上传按钮 */
+#     [data-testid="stFileUploader"] button {
+#         background-color: #111111;   /* 按钮黑色 */
+#         color: white !important;     /* 按钮文字白色 */
+#         border: 1px solid #555555;
+#         border-radius: 6px;
+#     }
+
+#     [data-testid="stFileUploader"] button:hover {
+#         background-color: #222222;   /* hover 时稍微亮一点 */
+#         border: 1px solid #888888;
+#     }
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
+
+
+
+# if uploaded_file is not None:
+#         try:
+#             data = pd.read_csv(uploaded_file, comment="#", sep=None, engine="python")
+#             st.success("✅ File loaded successfully!")
+#             st.dataframe(data)
+
+#             # --- Choose Features & Target ---
+#             st.subheader("⚙️ Model Training")
+#             all_columns = data.columns.tolist()
+#             target_col = st.selectbox("Select Target Column (e.g., koi_disposition)", all_columns)
+#             feature_cols = st.multiselect("Select Feature Columns", all_columns, default=all_columns)
+
+#             # --- Model Selection ---
+#             model_choice = st.radio("Choose Model", ["RandomForest", "LightGBM"])
+#             mode = st.radio("Select Training Mode", ["Manual Hyperparameters", "Auto Hyperparameter Tuning"])
+
+#             # --- Manual Mode ---
+#             if mode == "Manual Hyperparameters":
+#                 st.subheader("🎛️ Manual Hyperparameter Tuning")
+
+#                 if model_choice == "RandomForest":
+#                     n_estimators = st.slider("Number of Trees (n_estimators)", 50, 500, 200, 50)
+#                     max_depth = st.slider("Max Depth", 2, 20, 10)
+#                     min_samples_split = st.slider("Min Samples Split", 2, 10, 2)
+#                     min_samples_leaf = st.slider("Min Samples Leaf", 1, 10, 1)
+
+#                 else:  # LightGBM
+#                     n_estimators = st.slider("Number of Trees (n_estimators)", 50, 500, 200, 50)
+#                     max_depth = st.slider("Max Depth", -1, 20, 6)  # -1 = no limit
+#                     learning_rate = st.slider("Learning Rate", 0.01, 0.3, 0.05, 0.01)
+
+#                 if st.button("🚀 Train Model"):
+#                     if len(feature_cols) > 0:
+#                         with st.spinner("🛰️ Training model... Please wait while the algorithm orbits the data galaxy 🌌"):
+#                             import time
+#                             time.sleep(2)  # 这里可以模拟loading，真实情况是训练时间本身
+            
+#                             X = data[feature_cols].select_dtypes(include=['number']).fillna(0)
+#                             y = data[target_col]
+#                             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+#                             if model_choice == "RandomForest":
+#                                 model = RandomForestClassifier(
+#                                     n_estimators=n_estimators,
+#                                     max_depth=max_depth,
+#                                     min_samples_split=min_samples_split,
+#                                     min_samples_leaf=min_samples_leaf,
+#                                     random_state=42
+#                                 )
+#                             else:
+#                                 import lightgbm as lgb
+#                                 model = lgb.LGBMClassifier(
+#                                     n_estimators=n_estimators,
+#                                     max_depth=max_depth,
+#                                     learning_rate=learning_rate,
+#                                     random_state=42
+#                                 )
+
+#                             model.fit(X_train, y_train)
+
+#                         # 🚀 出spinner后显示结果
+#                         y_pred = model.predict(X_test)
+#                         acc = accuracy_score(y_test, y_pred)
+#                         st.success(f"✅ {model_choice} trained! Accuracy: **{acc:.2f}**")
+
+#                         import joblib
+#                         joblib.dump(model, "exoplanet_model.pkl")
+#                         st.info("💾 Model saved as `exoplanet_model.pkl`")
+
+#                         st.subheader("📊 Classification Report")
+#                         st.text(classification_report(y_test, y_pred))
+
+#                         st.subheader("🔎 Confusion Matrix")
+#                         fig, ax = plt.subplots()
+#                         sns.heatmap(confusion_matrix(y_test, y_pred), annot=True, fmt="d", cmap="Blues", ax=ax)
+#                         st.pyplot(fig)
+
+#             # --- Auto Mode ---
+#             elif mode == "Auto Hyperparameter Tuning":
+#                 st.subheader("🤖 Auto Hyperparameter Tuning with GridSearchCV")
+
+#                 if st.button("🔍 Run Grid Search"):
+#                     if len(feature_cols) > 0:
+#                         with st.spinner("🚀 Running Grid Search... Exploring hyperparameter galaxies, please hold tight 🌌🛰️"):
+#                             X = data[feature_cols].select_dtypes(include=['number']).fillna(0)
+#                             y = data[target_col]
+#                             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+#                             from sklearn.model_selection import GridSearchCV
+
+#                             if model_choice == "RandomForest":
+#                                 param_grid = {
+#                                     "n_estimators": [100, 200, 300],
+#                                     "max_depth": [5, 10, 15],
+#                                     "min_samples_split": [2, 5, 10],
+#                                     "min_samples_leaf": [1, 2, 4],
+#                                 }
+#                                 grid = GridSearchCV(
+#                                     RandomForestClassifier(random_state=42),
+#                                     param_grid,
+#                                     cv=3,
+#                                     n_jobs=-1,
+#                                     verbose=1
+#                                 )
+
+#                             else:  # LightGBM
+#                                 import lightgbm as lgb
+#                                 param_grid = {
+#                                     "n_estimators": [100, 200, 300],
+#                                     "max_depth": [-1, 6, 12],
+#                                     "learning_rate": [0.01, 0.05, 0.1],
+#                                 }
+#                                 grid = GridSearchCV(
+#                                     lgb.LGBMClassifier(random_state=42),
+#                                     param_grid,
+#                                     cv=3,
+#                                     n_jobs=-1,
+#                                     verbose=1
+#                                 )
+
+#                             grid.fit(X_train, y_train)  # 🔄 这里会触发 spinner
+
+#                         # 🚀 训练完成后显示结果
+#                         st.success(f"🎯 Best Parameters: {grid.best_params_}")
+#                         best_model = grid.best_estimator_
+
+#                         y_pred = best_model.predict(X_test)
+#                         acc = accuracy_score(y_test, y_pred)
+#                         st.success(f"✅ Best {model_choice} Accuracy: **{acc:.2f}**")
+
+#                         import joblib
+#                         joblib.dump(best_model, "exoplanet_model.pkl")
+#                         st.info("💾 Best model saved as `exoplanet_model.pkl`")
+
+#                         st.subheader("📊 Classification Report")
+#                         st.text(classification_report(y_test, y_pred))
+
+#                         st.subheader("🔎 Confusion Matrix")
+#                         fig, ax = plt.subplots()
+#                         sns.heatmap(confusion_matrix(y_test, y_pred), annot=True, fmt="d", cmap="Greens", ax=ax)
+#                         st.pyplot(fig)
+
+#         except Exception as e:
+#             st.error(f"❌ Could not read file: {e}")
+    
+#      st.markdown(
+#         """
+#         **Or train using NASA datasets:**
+
+#         - <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>  
+#         - <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=TOI" target="_blank">NASA TESS Objects of Interest (TOI)</a>  
+#         - <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=k2pandc" target="_blank">NASA K2 Planets and Candidates</a>  
+
+#         ⚠️ These datasets need to be downloaded in CSV format and uploaded here again.
+#         """,
+#         unsafe_allow_html=True
+
+#     )
+elif page == "Researcher Mode":
+    st.header("🔬 Researcher Mode - Advanced Tools")
 
     # 设置星空背景
     page_bg_img = """
@@ -369,14 +634,33 @@ elif page == "Researcher Mode":
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
+    # 说明文字
     st.markdown(
         """
-        <span style="color: white; font-size: 25px; font-weight: bold;"> Here you can upload new datasets, retrain the model, and analyze accuracy.</span> 🔬
-
+        <span style="color: white; font-size: 25px; font-weight: bold;"> 
+            Here you can upload new datasets, retrain the model, and analyze accuracy.
+        </span> 🔬
         """,
         unsafe_allow_html=True
     )
 
+    # 上传数据集标题
+    st.markdown(
+        """
+        <div style="font-size: 22px; font-weight: bold; color: white; margin-top: 15px; margin-bottom: 8px;">
+            📂 Upload dataset
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # 上传器（隐藏默认 label）
+    uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
+
+    if uploaded_file is not None:
+        st.write("✅ File uploaded:", uploaded_file.name)
+
+    # 美化上传器样式
     st.markdown(
         """
         <style>
@@ -411,193 +695,8 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
     )
 
-   # 上传器（隐藏默认 label）
-    uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
-
-
-# 样式
-st.markdown(
-    """
-    <style>
-    /* File uploader 外框 */
-    [data-testid="stFileUploader"] section {
-        background-color: #001f3f;   /* 深蓝色背景 */
-        border: 1px solid #00BFFF;   /* 浅蓝色边框 */
-        border-radius: 8px;
-    }
-
-    /* File uploader 内部文字 */
-    [data-testid="stFileUploader"] label,
-    [data-testid="stFileUploader"] div,
-    [data-testid="stFileUploader"] p {
-        color: white !important;   /* 白色字体 */
-    }
-
-    /* 上传按钮 */
-    [data-testid="stFileUploader"] button {
-        background-color: #111111;   /* 按钮黑色 */
-        color: white !important;     /* 按钮文字白色 */
-        border: 1px solid #555555;
-        border-radius: 6px;
-    }
-
-    [data-testid="stFileUploader"] button:hover {
-        background-color: #222222;   /* hover 时稍微亮一点 */
-        border: 1px solid #888888;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-
-
-if uploaded_file is not None:
-        try:
-            data = pd.read_csv(uploaded_file, comment="#", sep=None, engine="python")
-            st.success("✅ File loaded successfully!")
-            st.dataframe(data)
-
-            # --- Choose Features & Target ---
-            st.subheader("⚙️ Model Training")
-            all_columns = data.columns.tolist()
-            target_col = st.selectbox("Select Target Column (e.g., koi_disposition)", all_columns)
-            feature_cols = st.multiselect("Select Feature Columns", all_columns, default=all_columns)
-
-            # --- Model Selection ---
-            model_choice = st.radio("Choose Model", ["RandomForest", "LightGBM"])
-            mode = st.radio("Select Training Mode", ["Manual Hyperparameters", "Auto Hyperparameter Tuning"])
-
-            # --- Manual Mode ---
-            if mode == "Manual Hyperparameters":
-                st.subheader("🎛️ Manual Hyperparameter Tuning")
-
-                if model_choice == "RandomForest":
-                    n_estimators = st.slider("Number of Trees (n_estimators)", 50, 500, 200, 50)
-                    max_depth = st.slider("Max Depth", 2, 20, 10)
-                    min_samples_split = st.slider("Min Samples Split", 2, 10, 2)
-                    min_samples_leaf = st.slider("Min Samples Leaf", 1, 10, 1)
-
-                else:  # LightGBM
-                    n_estimators = st.slider("Number of Trees (n_estimators)", 50, 500, 200, 50)
-                    max_depth = st.slider("Max Depth", -1, 20, 6)  # -1 = no limit
-                    learning_rate = st.slider("Learning Rate", 0.01, 0.3, 0.05, 0.01)
-
-                if st.button("🚀 Train Model"):
-                    if len(feature_cols) > 0:
-                        with st.spinner("🛰️ Training model... Please wait while the algorithm orbits the data galaxy 🌌"):
-                            import time
-                            time.sleep(2)  # 这里可以模拟loading，真实情况是训练时间本身
-            
-                            X = data[feature_cols].select_dtypes(include=['number']).fillna(0)
-                            y = data[target_col]
-                            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-                            if model_choice == "RandomForest":
-                                model = RandomForestClassifier(
-                                    n_estimators=n_estimators,
-                                    max_depth=max_depth,
-                                    min_samples_split=min_samples_split,
-                                    min_samples_leaf=min_samples_leaf,
-                                    random_state=42
-                                )
-                            else:
-                                import lightgbm as lgb
-                                model = lgb.LGBMClassifier(
-                                    n_estimators=n_estimators,
-                                    max_depth=max_depth,
-                                    learning_rate=learning_rate,
-                                    random_state=42
-                                )
-
-                            model.fit(X_train, y_train)
-
-                        # 🚀 出spinner后显示结果
-                        y_pred = model.predict(X_test)
-                        acc = accuracy_score(y_test, y_pred)
-                        st.success(f"✅ {model_choice} trained! Accuracy: **{acc:.2f}**")
-
-                        import joblib
-                        joblib.dump(model, "exoplanet_model.pkl")
-                        st.info("💾 Model saved as `exoplanet_model.pkl`")
-
-                        st.subheader("📊 Classification Report")
-                        st.text(classification_report(y_test, y_pred))
-
-                        st.subheader("🔎 Confusion Matrix")
-                        fig, ax = plt.subplots()
-                        sns.heatmap(confusion_matrix(y_test, y_pred), annot=True, fmt="d", cmap="Blues", ax=ax)
-                        st.pyplot(fig)
-
-            # --- Auto Mode ---
-            elif mode == "Auto Hyperparameter Tuning":
-                st.subheader("🤖 Auto Hyperparameter Tuning with GridSearchCV")
-
-                if st.button("🔍 Run Grid Search"):
-                    if len(feature_cols) > 0:
-                        with st.spinner("🚀 Running Grid Search... Exploring hyperparameter galaxies, please hold tight 🌌🛰️"):
-                            X = data[feature_cols].select_dtypes(include=['number']).fillna(0)
-                            y = data[target_col]
-                            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-                            from sklearn.model_selection import GridSearchCV
-
-                            if model_choice == "RandomForest":
-                                param_grid = {
-                                    "n_estimators": [100, 200, 300],
-                                    "max_depth": [5, 10, 15],
-                                    "min_samples_split": [2, 5, 10],
-                                    "min_samples_leaf": [1, 2, 4],
-                                }
-                                grid = GridSearchCV(
-                                    RandomForestClassifier(random_state=42),
-                                    param_grid,
-                                    cv=3,
-                                    n_jobs=-1,
-                                    verbose=1
-                                )
-
-                            else:  # LightGBM
-                                import lightgbm as lgb
-                                param_grid = {
-                                    "n_estimators": [100, 200, 300],
-                                    "max_depth": [-1, 6, 12],
-                                    "learning_rate": [0.01, 0.05, 0.1],
-                                }
-                                grid = GridSearchCV(
-                                    lgb.LGBMClassifier(random_state=42),
-                                    param_grid,
-                                    cv=3,
-                                    n_jobs=-1,
-                                    verbose=1
-                                )
-
-                            grid.fit(X_train, y_train)  # 🔄 这里会触发 spinner
-
-                        # 🚀 训练完成后显示结果
-                        st.success(f"🎯 Best Parameters: {grid.best_params_}")
-                        best_model = grid.best_estimator_
-
-                        y_pred = best_model.predict(X_test)
-                        acc = accuracy_score(y_test, y_pred)
-                        st.success(f"✅ Best {model_choice} Accuracy: **{acc:.2f}**")
-
-                        import joblib
-                        joblib.dump(best_model, "exoplanet_model.pkl")
-                        st.info("💾 Best model saved as `exoplanet_model.pkl`")
-
-                        st.subheader("📊 Classification Report")
-                        st.text(classification_report(y_test, y_pred))
-
-                        st.subheader("🔎 Confusion Matrix")
-                        fig, ax = plt.subplots()
-                        sns.heatmap(confusion_matrix(y_test, y_pred), annot=True, fmt="d", cmap="Greens", ax=ax)
-                        st.pyplot(fig)
-
-        except Exception as e:
-            st.error(f"❌ Could not read file: {e}")
-    
-     st.markdown(
+    # NASA 数据集下载链接
+    st.markdown(
         """
         **Or train using NASA datasets:**
 
@@ -608,8 +707,9 @@ if uploaded_file is not None:
         ⚠️ These datasets need to be downloaded in CSV format and uploaded here again.
         """,
         unsafe_allow_html=True
-
     )
+
+
 
 
 
