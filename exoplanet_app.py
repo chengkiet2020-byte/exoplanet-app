@@ -217,7 +217,7 @@ if page == "Home":
 
     with col_mid:
         st.markdown("<div style='margin-top:60px'></div>", unsafe_allow_html=True)
-        st.image("https://i.imgur.com/06k5Rjl.jpeg", width=1220) 
+        st.image("https://i.imgur.com/v2y7ZST.jpeg", width=1220) 
     
     with col_right: 
         st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
@@ -800,6 +800,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
