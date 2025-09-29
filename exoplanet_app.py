@@ -388,6 +388,8 @@ elif page == "Researcher Mode":
         }
         </style>
         """,
+        unsafe_allow_html=True
+    )       
 import streamlit as st
 
 # --- 自定义 CSS ---
@@ -564,6 +566,7 @@ uploaded_file = st.file_uploader("📂 Upload dataset", type=["csv", "txt", "tsv
         unsafe_allow_html=True
 
     )
+
 
 
 
