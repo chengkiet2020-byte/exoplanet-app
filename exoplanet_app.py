@@ -42,7 +42,7 @@ st.markdown(
 
     /* 标题 (title, header, subheader) 白色 + NASA 蓝 */
     h1, h2, h3, h4, h5, h6 {
-        color: #00BFFF !important;  /* NASA 蓝色 */
+        color: #00BFFF;  /* NASA 蓝色 */
         font-weight: bold;
     }
 
@@ -194,7 +194,7 @@ if page == "Home":
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-    st.subheader("🌌 Galactic Explorer 117")
+    st.subheader("<span style="color: yellow; font-weight: bold;">Team: Galactic Explorer 117</span>")
     st.markdown(
         """
         <p style="font-size:30px; line-height:1.6;">
@@ -505,6 +505,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
