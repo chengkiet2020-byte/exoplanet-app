@@ -392,14 +392,11 @@ elif page == "Researcher Mode":
     )
     
     st.markdown(
-        """
-        <span style="color: white; font-size: 20px; font-weight: bold;"> 📂 Upload dataset</span> �
+    '<span style="color: white; font-size: 20px; font-weight: bold;">📂 Upload dataset</span>',
+    unsafe_allow_html=True
+)
 
-        """,
-        unsafe_allow_html=True
-    )
-
-    uploaded_file = st.file_uploader(type=["csv", "txt", "tsv", "xlsx"])
+uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
 
     if uploaded_file is not None:
         try:
@@ -559,6 +556,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
