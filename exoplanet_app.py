@@ -182,6 +182,18 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
+st.markdown(
+    """
+    <style>
+    /* 隐藏默认的 file uploader 标题 */
+    [data-testid="stFileUploader"] label {
+        display: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # --- Home Page ---
 if page == "Home":
     col1, col2, col3 = st.columns([1, 2, 1])
@@ -709,6 +721,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
