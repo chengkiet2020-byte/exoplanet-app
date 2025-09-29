@@ -197,7 +197,7 @@ if page == "Home":
         st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
     
     with col2: 
-        st.image("https://i.imgur.com/TL2RXUL.png"， width=250)
+        st.image("https://i.imgur.com/TL2RXUL.png", width=250)
     # st.title("🚀 Exoscan 117")
     st.markdown(
     """
@@ -716,6 +716,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
