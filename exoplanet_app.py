@@ -349,7 +349,13 @@ elif page == "Researcher Mode":
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-    st.write("Here you can upload new datasets, retrain the model, and analyze accuracy.")
+        st.markdown(
+        """
+        <span style="color: white; font-size: 25px; font-weight: bold;"> Here you can upload new datasets, retrain the model, and analyze accuracy.</span> 🔬
+
+        """,
+        unsafe_allow_html=True
+    )
 
     st.markdown(
         """
@@ -545,6 +551,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
