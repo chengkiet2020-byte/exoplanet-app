@@ -221,16 +221,18 @@ if page == "Home":
     
     # st.title("🚀 Exoscan 117")
 
-    st.markdown(
-        """
-        <h1 style="color: #FFD580; font-size: 80px; font-weight: bold; margin-top:30px;">
-            Exoscan 117 🚀
-        </h1>
-        """,
-        unsafe_allow_html=True
-    )
-
-    
+st.markdown(
+    """
+    <h1 style="color: #FFD580; 
+               font-size: 80px; 
+               font-weight: bold; 
+               margin-top:30px; 
+               text-align:center;">
+        Exoscan 117 🚀
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 
     # 设置星空背景
     page_bg_img = """
@@ -793,6 +795,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
