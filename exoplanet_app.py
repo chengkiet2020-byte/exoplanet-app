@@ -210,7 +210,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-    st.markdown(
+st.markdown(
         """
         <p style="font-size:25px; line-height:1.6;">
         Welcome ⭐ to our Exoplanet Classifier🪐! 
@@ -523,6 +523,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
