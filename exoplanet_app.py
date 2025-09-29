@@ -249,7 +249,12 @@ st.markdown(
     div[data-testid="stSidebarCollapseButton"] button:hover svg {
         fill: red !important;
         stroke: red !important;
-        transform: scale(1.
+        transform: scale(1.2) !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # --- Home Page ---
 if page == "Home":
@@ -862,6 +867,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
