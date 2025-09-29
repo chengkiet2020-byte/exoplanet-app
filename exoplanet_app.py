@@ -208,24 +208,24 @@ page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
 # 页面标题（可选）
 st.set_page_config(page_title="Exoscan 117", layout="wide")
 
-# 放置你的自定义 HTML 框
-st.markdown("""
-<div style="
-    background: linear-gradient(135deg, #1f4037, #99f2c8);
-    border-radius: 25px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 0 25px 5px rgba(255, 255, 255, 0.6);
-    border: 2px solid #FFD580;
-">
-    <h1 style="color: #FFD580; font-size: 60px; font-weight: bold;">Exoscan 117 🚀</h1>
-    <h2 style="color: #FF4C4C; font-size: 35px; margin-top: -10px;">Team: Galactic Explorer 117</h2>
-    <p style="color: white; font-size: 20px; margin-top: 20px;">
-        Welcome ⭐ to our Exoplanet Classifier 🪐!<br>
-        Choose one of the modes from the sidebar:
-    </p>
-</div>
-""", unsafe_allow_html=True)
+# # 放置你的自定义 HTML 框
+# st.markdown("""
+# <div style="
+#     background: linear-gradient(135deg, #1f4037, #99f2c8);
+#     border-radius: 25px;
+#     padding: 30px;
+#     text-align: center;
+#     box-shadow: 0 0 25px 5px rgba(255, 255, 255, 0.6);
+#     border: 2px solid #FFD580;
+# ">
+#     <h1 style="color: #FFD580; font-size: 60px; font-weight: bold;">Exoscan 117 🚀</h1>
+#     <h2 style="color: #FF4C4C; font-size: 35px; margin-top: -10px;">Team: Galactic Explorer 117</h2>
+#     <p style="color: white; font-size: 20px; margin-top: 20px;">
+#         Welcome ⭐ to our Exoplanet Classifier 🪐!<br>
+#         Choose one of the modes from the sidebar:
+#     </p>
+# </div>
+# """, unsafe_allow_html=True)
 
 # 自定义upload dataset
 st.markdown(
@@ -889,6 +889,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
