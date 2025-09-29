@@ -388,17 +388,25 @@ elif page == "Researcher Mode":
         }
         </style>
         """,
-        unsafe_allow_html=True
-    )
-    
-    st.markdown(
-    '<span style="color: white; font-size: 20px; font-weight: bold;">📂 Upload dataset</span>',
-    unsafe_allow_html=True
-)
+import streamlit as st
 
-uploaded_file = st.file_uploader("", type=["csv", "txt", "tsv", "xlsx"])
+# --- 自定义 CSS ---
+st.markdown("""
+    <style>
+    /* 修改上传按钮的 label 样式 */
+    .stFileUploader label {
+        color: white !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
-if uploaded_file is not None:
+# --- 文件上传器 ---
+uploaded_file = st.file_uploader("📂 Upload dataset", type=["csv", "txt", "tsv", "xlsx"])
+
+
+    if uploaded_file is not None:
         try:
             data = pd.read_csv(uploaded_file, comment="#", sep=None, engine="python")
             st.success("✅ File loaded successfully!")
@@ -556,6 +564,7 @@ if uploaded_file is not None:
         unsafe_allow_html=True
 
     )
+
 
 
 
