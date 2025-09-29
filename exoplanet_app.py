@@ -342,7 +342,20 @@ if page == "Home":
     unsafe_allow_html=True
 )
 
+col1, col2, col3 = st.columns([1,2,1])  # 左1, 中2, 右1
 
+with col2:
+    st.markdown(
+        """
+        <h1 style="font-size:40px; color:white;">Exoscan 117 🚀</h1>
+        <h2 style="font-size:30px; color:red;">Team: Galactic Explorer 117</h2>
+        <p style="font-size:25px; color:white;">
+        Welcome ⭐ to our Exoplanet Classifier🪐!<br>
+        Choose one of the modes from the sidebar:
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
 
 # --- Novice Mode ---
 elif page == "Novice Mode":
@@ -796,6 +809,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
