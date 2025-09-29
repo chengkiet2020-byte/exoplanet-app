@@ -195,13 +195,16 @@ if page == "Home":
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
     # st.markdown('<span style="color: red; font-weight: bold; font-size:35px;">Team: Galactic Explorer 117</span>', unsafe_allow_html=True)
-    st.markdown(
+st.markdown(
     """
-    # <span style="color: red; font-weight: bold; font-size:35px;">
-    #     Team: Galactic Explorer 117 
-        <span style="display:inline-block; border: 2px solid red; padding: 5px 15px; border-radius: 8px; margin-left:10px; font-size:35px; font-weight: bold; color: red;">
-         Team: Galactic Explorer 117 
-        </span>
+    <span style="display:inline-block; 
+                 border: 2px solid red; 
+                 padding: 8px 20px; 
+                 border-radius: 10px; 
+                 font-size:35px; 
+                 font-weight: bold; 
+                 color: red;">
+        Team: Galactic Explorer 117
     </span>
     """,
     unsafe_allow_html=True
@@ -214,8 +217,8 @@ if page == "Home":
         <br> Choose one of the modes from the sidebar:
         <br>
         <br> <span style="color: yellow; font-weight: bold;">1) Novice Mode</span> 🟢 : 
-        <br> - For beginners, explore planets by entering basic parameters. (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
-        <br>
+        <br> - For beginners, explore planets by entering basic parameters. 
+        <br>   (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
         <br> <span style="color: yellow; font-weight: bold;">2)Researcher Mode</span> 🔬 : 
         <br> - For advanced users, upload datasets, train models, and analyze results. 
  
@@ -520,6 +523,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
