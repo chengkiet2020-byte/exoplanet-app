@@ -173,7 +173,7 @@ if page == "Home":
     # st.title("🚀 Exoscan 117")
     st.markdown(
     """
-    <h1 style="color: light orange; font-size: 60px; font-weight: bold;">
+    <h1 style="color: #FFD580; font-size: 80px; font-weight: bold;">
         🚀 Exoscan 117
     </h1>
     """,
@@ -533,6 +533,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
