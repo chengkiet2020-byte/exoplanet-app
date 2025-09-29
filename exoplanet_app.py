@@ -391,7 +391,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
     )
 
-    uploaded_file = st.file_uploader("📂 Upload dataset", type=["csv", "txt", "tsv", "xlsx"])
+    uploaded_file = st.file_uploader("<span style="color: white; font-size: 20px; font-weight: bold;"> 📂 Upload dataset</span>", type=["csv", "txt", "tsv", "xlsx"])
 
     if uploaded_file is not None:
         try:
@@ -551,6 +551,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
