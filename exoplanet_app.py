@@ -204,7 +204,7 @@ if page == "Home":
     st.image("https://i.imgur.com/TL2RXUL.png", width=220)
     st.markdown(
     """
-    <div style='margin-left:50px'></div>", unsafe_allow_html=True)  # 加空白
+    <div style='margin-left:50px'></div>
     <h1 style="color: #FFD580; font-size: 80px; font-weight: bold;">
          Exoscan 117 🚀
     </h1>
@@ -720,6 +720,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
