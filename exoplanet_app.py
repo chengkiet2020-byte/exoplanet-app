@@ -351,25 +351,25 @@ if page == "Home":
 )
 
     # 设置星空背景
-    page_bg_img = """
-    <style>
-    [data-testid="stAppViewContainer"] {
-        background-image: url("https://exoplanets.nasa.gov/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdVlJIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f2f515b043e84637caa53c9b71030e2d0c5baac1/exo20180301-home.jpg?disposition=inline");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+    # page_bg_img = """
+    # <style>
+    # [data-testid="stAppViewContainer"] {
+    #     background-image: url("https://exoplanets.nasa.gov/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdVlJIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f2f515b043e84637caa53c9b71030e2d0c5baac1/exo20180301-home.jpg?disposition=inline");
+    #     background-size: cover;
+    #     background-position: center;
+    #     background-repeat: no-repeat;
+    # }
 
-    [data-testid="stHeader"] {
-        #background: rgba(0,0,0,0); /* 顶部透明 */
-    }
+    # [data-testid="stHeader"] {
+    #     #background: rgba(0,0,0,0); /* 顶部透明 */
+    # }
 
-    [data-testid="stToolbar"] {
-        right: 2rem;
-    }
-    </style>
-    """
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+    # [data-testid="stToolbar"] {
+    #     right: 2rem;
+    # }
+    # </style>
+    # """
+    # st.markdown(page_bg_img, unsafe_allow_html=True)
 
     # 队名框框
 #     st.markdown(
@@ -469,26 +469,26 @@ elif page == "Novice Mode":
         unsafe_allow_html=True
     )
 
-    # 设置星空背景
-    page_bg_img = """
-    <style>
-    [data-testid="stAppViewContainer"] {
-        background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+    # # 设置星空背景
+    # page_bg_img = """
+    # <style>
+    # [data-testid="stAppViewContainer"] {
+    #     background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
+    #     background-size: cover;
+    #     background-position: center;
+    #     background-repeat: no-repeat;
+    # }
 
-    [data-testid="stHeader"] {
-        #background: rgba(0,0,0,0); /* 顶部透明 */
-    }
+    # [data-testid="stHeader"] {
+    #     #background: rgba(0,0,0,0); /* 顶部透明 */
+    # }
 
-    [data-testid="stToolbar"] {
-        right: 2rem;
-    }
-    </style>
-    """
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+    # [data-testid="stToolbar"] {
+    #     right: 2rem;
+    # }
+    # </style>
+    # """
+    # st.markdown(page_bg_img, unsafe_allow_html=True)
 
     # NASA Logo + 标题
     # col1, col2, col3 = st.columns([1, 2, 1])
@@ -816,26 +816,26 @@ elif page == "Novice Mode":
 elif page == "Researcher Mode":
     st.header("🔬 Researcher Mode - Advanced Tools")
 
-    # 设置星空背景
-    page_bg_img = """
-    <style>
-    [data-testid="stAppViewContainer"] {
-        background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+    # # 设置星空背景
+    # page_bg_img = """
+    # <style>
+    # [data-testid="stAppViewContainer"] {
+    #     background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
+    #     background-size: cover;
+    #     background-position: center;
+    #     background-repeat: no-repeat;
+    # }
 
-    [data-testid="stHeader"] {
-        #background: rgba(0,0,0,0); /* 顶部透明 */
-    }
+    # [data-testid="stHeader"] {
+    #     #background: rgba(0,0,0,0); /* 顶部透明 */
+    # }
 
-    [data-testid="stToolbar"] {
-        right: 2rem;
-    }
-    </style>
-    """
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+    # [data-testid="stToolbar"] {
+    #     right: 2rem;
+    # }
+    # </style>
+    # """
+    # st.markdown(page_bg_img, unsafe_allow_html=True)
 
     # 说明文字
     st.markdown(
@@ -911,6 +911,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
