@@ -290,20 +290,19 @@ st.markdown("""
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    z-index: -9999;  /* 放到最底层 */
+    z-index: -9999;
 }
 
 .stApp {
-    background: transparent !important;  /* 让背景透明，让视频显示出来 */
+    background: transparent !important;
     color: white !important;
 }
 </style>
 
 <video autoplay muted loop id="bgVideo">
-    <source src="videos/earth.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/xxxxx.mp4" type="video/mp4">
 </video>
 """, unsafe_allow_html=True)
-
 
 # --- Home Page ---
 if page == "Home":
@@ -916,6 +915,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
