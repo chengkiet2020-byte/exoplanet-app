@@ -280,63 +280,12 @@ st.markdown(
 )
 
 
-st.set_page_config(layout="wide")  # 页面宽屏显示
+import streamlit as st
 
-# ==== 将本地视频嵌入 HTML ====
-video_file = "earth.mp4"
-video_path = Path("earh.mp4")
+st.set_page_config(layout="wide")
 
-# 将视频读取为 Base64
-video_bytes = video_path.read_bytes()
-video_base64 = base64.b64encode(video_bytes).decode()
-
-# 用 HTML 显示视频背景
-st.markdown(f"""
-    <style>
-    /* 背景视频样式 */
-    #bgVideo {{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }}
-
-    /* 页面内容样式 */
-    .content {{
-        position: relative;
-        z-index: 1;
-        color: white;
-        text-align: center;
-        margin-top: 20%;
-        font-family: Arial, sans-serif;
-    }}
-
-    .content h1 {{
-        font-size: 3em;
-        text-shadow: 2px 2px 5px black;
-    }}
-
-    .content p {{
-        font-size: 1.5em;
-        text-shadow: 1px 1px 3px black;
-    }}
-    </style>
-
-    <!-- 背景视频 -->
-    <video autoplay muted loop id="bgVideo">
-        <source src="data:video/mp4;base64,{video_base64}" type="video/mp4">
-    </video>
-
-    <!-- 页面内容 -->
-    <div class="content">
-        <h1>欢迎来到我的 Streamlit 项目</h1>
-        <p>这是带视频背景的示例网页</p>
-    </div>
-""", unsafe_allow_html=True)
-
+# 播放本地视频
+st.video("earth.mp4", format="video/mp4", start_time=0)
 
 # --- Home Page ---
 if page == "Home":
@@ -949,6 +898,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
