@@ -284,7 +284,7 @@ st.set_page_config(layout="wide")  # 页面宽屏显示
 
 # ==== 将本地视频嵌入 HTML ====
 video_file = "earth.mp4"
-video_path = Path(earh.mp4_Downloads)
+video_path = Path("earh.mp4")
 
 # 将视频读取为 Base64
 video_bytes = video_path.read_bytes()
@@ -949,6 +949,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
