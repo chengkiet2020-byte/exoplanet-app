@@ -279,6 +279,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+<video autoplay muted loop id="bgVideo">
+    <source src="videos/earth.mp4" type="video/mp4">
+</video>
+
 
 # --- Home Page ---
 if page == "Home":
@@ -891,6 +895,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
