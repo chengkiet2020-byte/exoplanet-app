@@ -279,9 +279,25 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.set_page_config(layout="wide")
+
+st.markdown("""
+<style>
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+</style>
+
 <video autoplay muted loop id="bgVideo">
     <source src="videos/earth.mp4" type="video/mp4">
 </video>
+""", unsafe_allow_html=True)
 
 
 # --- Home Page ---
@@ -895,6 +911,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
