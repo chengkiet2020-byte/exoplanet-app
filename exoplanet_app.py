@@ -280,13 +280,6 @@ st.markdown(
 )
 
 
-import streamlit as st
-
-st.set_page_config(layout="wide")
-
-# 播放本地视频
-st.video("earth.mp4", format="video/mp4", start_time=0)
-
 # --- Home Page ---
 if page == "Home":
 # 链接自定义
@@ -898,6 +891,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
