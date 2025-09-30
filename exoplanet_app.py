@@ -291,35 +291,11 @@ st.markdown("""
         z-index: -1;
     }
 
-    /* 页面内容 */
-    .content {
-        position: relative;
-        z-index: 1;
-        color: white;
-        text-align: center;
-        margin-top: 20%;
-        font-family: Arial, sans-serif;
-    }
-
-    .content h1 {
-        font-size: 3em;
-        text-shadow: 2px 2px 5px black;
-    }
-
-    .content p {
-        font-size: 1.5em;
-        text-shadow: 1px 1px 3px black;
-    }
-    </style>
-
     <video autoplay muted loop id="bgVideo">
-        <source src="videos/background.mp4" type="video/mp4">
+        <source src="Free 4k Live Wallpaper of Earth from Space For any screen in highest quality.mp4" type="video/mp4">
     </video>
 
-    <div class="content">
-        <h1>欢迎来到我的 Streamlit 项目</h1>
-        <p>这是带视频背景的示例</p>
-    </div>
+
 """, unsafe_allow_html=True)
 
 
@@ -935,6 +911,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
