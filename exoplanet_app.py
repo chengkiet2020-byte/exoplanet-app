@@ -278,6 +278,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+import streamlit as st
+
 st.markdown("""
     <style>
     /* 背景视频样式 */
@@ -291,14 +293,33 @@ st.markdown("""
         z-index: -1;
     }
 
+    /* 页面内容样式 */
+    .content {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        margin-top: 20%;
+        font-family: Arial, sans-serif;
+    }
+
+    .content h1 {
+        font-size: 3em;
+        text-shadow: 2px 2px 5px black;
+    }
+
+    .content p {
+        font-size: 1.5em;
+        text-shadow: 1px 1px 3px black;
+    }
+    </style>
+
+    <!-- 背景视频 -->
     <video autoplay muted loop id="bgVideo">
-        <source src="Free 4k Live Wallpaper of Earth from Space For any screen in highest quality.mp4" type="video/mp4">
+        <source src="Free%204k%20Live%20Wallpaper%20of%20Earth%20from%20Space%20For%20any%20screen%20in%20highest%20quality.mp4" type="video/mp4">
     </video>
 
-
 """, unsafe_allow_html=True)
-
-
 
 # --- Home Page ---
 if page == "Home":
@@ -911,6 +932,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
