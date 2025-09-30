@@ -287,10 +287,15 @@ st.markdown("""
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
-    z-index: -1;
+    z-index: -9999;  /* 放到最底层 */
+}
+
+.stApp {
+    background: transparent !important;  /* 让背景透明，让视频显示出来 */
+    color: white !important;
 }
 </style>
 
@@ -911,6 +916,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
