@@ -519,44 +519,44 @@ elif page == "Novice Mode":
             - It could be due to noise, binary stars, or stellar activity instead of an exoplanet.  
             """)
 
---- Researcher Mode ---
-elif page == "Researcher Mode":
-    st.markdown(
-        """
-        <span style="color: yellow; font-size: 40px; font-weight: bold;"> 2) Researcher Mode - Advanced Tools</span> 🔬
+# --- Researcher Mode ---
+# elif page == "Researcher Mode":
+#     st.markdown(
+#         """
+#         <span style="color: yellow; font-size: 40px; font-weight: bold;"> 2) Researcher Mode - Advanced Tools</span> 🔬
 
-        """,
-        unsafe_allow_html=True
-    )
+#         """,
+#         unsafe_allow_html=True
+#     )
 
-    # 设置星空背景
-    page_bg_img = """
-    <style>
-    [data-testid="stAppViewContainer"] {
-        background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+#     # 设置星空背景
+#     page_bg_img = """
+#     <style>
+#     [data-testid="stAppViewContainer"] {
+#         background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
+#         background-size: cover;
+#         background-position: center;
+#         background-repeat: no-repeat;
+#     }
 
-    [data-testid="stHeader"] {
-        #background: rgba(0,0,0,0); /* 顶部透明 */
-    }
+#     [data-testid="stHeader"] {
+#         #background: rgba(0,0,0,0); /* 顶部透明 */
+#     }
 
-    [data-testid="stToolbar"] {
-        right: 2rem;
-    }
-    </style>
-    """
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+#     [data-testid="stToolbar"] {
+#         right: 2rem;
+#     }
+#     </style>
+#     """
+#     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-    st.markdown(
-        """
-        <span style="color: white; font-size: 25px; font-weight: bold;"> Here you can upload new datasets, retrain the model, and analyze accuracy.</span> 🔬
+#     st.markdown(
+#         """
+#         <span style="color: white; font-size: 25px; font-weight: bold;"> Here you can upload new datasets, retrain the model, and analyze accuracy.</span> 🔬
 
-        """,
-        unsafe_allow_html=True
-    )
+#         """,
+#         unsafe_allow_html=True
+#     )
 
 #     st.markdown(
 #         """
@@ -889,6 +889,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
