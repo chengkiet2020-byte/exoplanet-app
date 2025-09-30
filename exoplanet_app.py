@@ -8,7 +8,8 @@ import seaborn as sns
 import pickle
 import joblib
 import numpy as np
-
+import base64
+from pathlib import Path
 # # --- 自定义 CSS ---
 # st.markdown("""
 #     <style>
@@ -279,10 +280,21 @@ st.markdown(
 )
 
 
-st.markdown("""
+st.set_page_config(layout="wide")  # 页面宽屏显示
+
+# ==== 将本地视频嵌入 HTML ====
+video_file = "Free 4k Live Wallpaper of Earth from Space For any screen in highest quality.mp4"
+video_path = Path(video_file)
+
+# 将视频读取为 Base64
+video_bytes = video_path.read_bytes()
+video_base64 = base64.b64encode(video_bytes).decode()
+
+# 用 HTML 显示视频背景
+st.markdown(f"""
     <style>
     /* 背景视频样式 */
-    #bgVideo {
+    #bgVideo {{
         position: fixed;
         top: 0;
         left: 0;
@@ -290,35 +302,41 @@ st.markdown("""
         height: 100%;
         object-fit: cover;
         z-index: -1;
-    }
+    }}
 
     /* 页面内容样式 */
-    .content {
+    .content {{
         position: relative;
         z-index: 1;
         color: white;
         text-align: center;
         margin-top: 20%;
         font-family: Arial, sans-serif;
-    }
+    }}
 
-    .content h1 {
+    .content h1 {{
         font-size: 3em;
         text-shadow: 2px 2px 5px black;
-    }
+    }}
 
-    .content p {
+    .content p {{
         font-size: 1.5em;
         text-shadow: 1px 1px 3px black;
-    }
+    }}
     </style>
 
     <!-- 背景视频 -->
     <video autoplay muted loop id="bgVideo">
-        <source src="Free%204k%20Live%20Wallpaper%20of%20Earth%20from%20Space%20For%20any%20screen%20in%20highest%20quality.mp4" type="video/mp4">
+        <source src="data:video/mp4;base64,{video_base64}" type="video/mp4">
     </video>
 
+    <!-- 页面内容 -->
+    <div class="content">
+        <h1>欢迎来到我的 Streamlit 项目</h1>
+        <p>这是带视频背景的示例网页</p>
+    </div>
 """, unsafe_allow_html=True)
+
 
 # --- Home Page ---
 if page == "Home":
@@ -931,6 +949,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
