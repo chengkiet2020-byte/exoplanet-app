@@ -549,9 +549,6 @@ div[data-testid="stButton"]:nth-of-type(2) button {
 }
 
 
-    
-    # st.markdown( """ <style> div.stButton > button { font-weight: bold; font-size: 28px; padding: 20px 36px; border-radius: 16px; border: 2px solid; width: 100%; height: 80px; }
-    
     #     /* Novice Mode 按钮 */
     #     div[data-testid="stButton"]:first-child > button {
     #         border-color: #1E90FF;
@@ -1052,6 +1049,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
