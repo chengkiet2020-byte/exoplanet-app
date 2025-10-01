@@ -23,7 +23,7 @@ page_bg_video = """
     height: 100vh;
     object-fit: cover;
     z-index: 0;
-    background: transparent;
+    background: black;
 }
 </style>
 
@@ -839,6 +839,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
