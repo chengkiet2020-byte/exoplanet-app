@@ -488,7 +488,7 @@ if page == "Home":
     st.markdown(
     """
     <div style="text-align: center; 
-                font-size: 60px !important; 
+                font-size: 70px !important; 
                 font-weight: bold; 
                 color: #BA55D3 !important; 
                 margin: 20px 0;">
@@ -1014,6 +1014,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
