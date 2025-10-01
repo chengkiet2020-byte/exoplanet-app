@@ -516,12 +516,12 @@ if page == "Home":
             color: black;
         }
         /* Researcher Mode 按钮 */
-        div.stButton > button[kind="secondary"] {
+        div[data-testid="stButton"]:nth-child(2) > button {
             border-color: #FF0000;
             background-color: #FF0000;
             color: white;
         }
-        div.stButton > button[kind="secondary"]:hover {
+        div[data-testid="stButton"]:nth-child(2) > button:hover {
             background-color: #8B0000;
             color: yellow;
         }
@@ -1005,6 +1005,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
