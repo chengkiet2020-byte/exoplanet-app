@@ -14,16 +14,16 @@ from sklearn.metrics import accuracy_score
 import numpy as np
 
 if "video_loaded" not in st.session_state:
-page_bg_video = """
-<style>
-#bgvid {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -9999;
+    page_bg_video = """
+    <style>
+    #bgvid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -9999;
 }
 </style>
 
@@ -792,6 +792,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
