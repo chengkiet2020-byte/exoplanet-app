@@ -14,24 +14,23 @@ from sklearn.metrics import accuracy_score
 import numpy as np
 
 page_bg_video = """
-    <style>
-    #bgvid {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -9999;
-        background: black;
-    }
-    </style>
+<style>
+#bgvid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    background: black;
+}
+</style>
 
-    <video autoplay muted loop playsinline id="bgvid">
-        <source src="https://raw.githubusercontent.com/chengkiet2020-byte/exoplanet-app/main/videos/earth.mp4
-" type="video/mp4">
-    </video>
-    """
+<video autoplay muted loop playsinline id="bgvid">
+    <source src="https://raw.githubusercontent.com/chengkiet2020-byte/exoplanet-app/main/videos/earth.mp4" type="video/mp4">
+</video>
+"""
 
 st.markdown(page_bg_video, unsafe_allow_html=True)
 
@@ -792,6 +791,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
