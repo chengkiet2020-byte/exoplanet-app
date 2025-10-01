@@ -13,27 +13,40 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import numpy as np
 
+
 page_bg_video = """
 <style>
-#bgvid {
+.stApp {
+    background: transparent !important;
+}
+video#bgvid {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    z-index: 0;
+    z-index: -1;
     pointer-events: none;
-    background: black;
 }
 </style>
 
-<video autoplay muted loop playsinline id="bgvid">
-    <source src="https://github.com/chengkiet2020-byte/exoplanet-app/raw/refs/heads/main/videos/earthroute%20(1)%20(1).mp4" type="video/mp4">
-</video>
+<script>
+const existing = document.getElementById("bgvid");
+if (!existing) {
+    var video = document.createElement("video");
+    video.id = "bgvid";
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.innerHTML = '<source src="https://github.com/chengkiet2020-byte/exoplanet-app/raw/refs/heads/main/videos/earthroute%20(1)%20(1).mp4" type="video/mp4">';
+    document.body.appendChild(video);
+}
+</script>
 """
-
 st.markdown(page_bg_video, unsafe_allow_html=True)
+
 
 # Custom CSS for gradient dark blue header + sidebar
 st.markdown(
@@ -126,32 +139,25 @@ div[data-baseweb="menu"] div[role="listbox"] div[role="option"] {
 """, unsafe_allow_html=True)
 
 
-st.markdown(
-    """
-    <style>
-    /* Title (st.title 或 markdown #) */
-    h1 {
-        font-size: 50px;
-    }
+st.markdown("""
+<style>
+/* Header (st.header 或 markdown ##) */
+h2 {
+    font-size: 44px !important;
+}
 
-    /* Header (st.header 或 markdown ##) */
-    h2 {
-        font-size: 40px;
-    }
+/* Subheader (st.subheader 或 markdown ###) */
+h3 {
+    font-size: 36px !important;
+}
 
-    /* Subheader (st.subheader 或 markdown ###) */
-    h3 {
-        font-size: 32px;
-    }
+/* 普通 markdown 文本（p, span, div 内文字） */
+p, div, span, label {
+    font-size: 20px !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
-    /* 普通 markdown 文本（p, span, div 内文字） */
-    p, div, span, label {
-        font-size: 18px !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 # 放在 app 开头
 st.markdown(
@@ -159,20 +165,20 @@ st.markdown(
     <style>
     /* 整体背景黑色 */
     .stApp {
-        background-color: #000000;
+        background-color: transparent !important;
         color: white !important;
         font-family: 'Trebuchet MS', sans-serif;
     }
 
     /* 标题 (title, header, subheader) 白色 + NASA 蓝 */
     h1, h2, h3, h4, h5, h6 {
-        color: #00BFFF;  /* NASA 蓝色 */
+        color: #00BFFF !important;  /* NASA 蓝色 */
         font-weight: bold;
     }
 
     /* 普通文字 */
     p, label, span, div {
-        color: white;
+        color: white !important;
     }
 
     /* 按钮设计 */
@@ -213,6 +219,22 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
+st.markdown(
+    """
+    <style>
+    [data-testid="stAppViewContainer"] {
+        background: transparent;
+    }
+    [data-testid="stHeader"] {
+        background: transparent;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 st.markdown(
     """
@@ -330,124 +352,251 @@ ul[role="listbox"] {
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown(
+    """
+    <style>
+    h1 {
+        text-align: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <style>
+    /* 去掉顶部 header */
+    header[data-testid="stHeader"] {
+        display: none !important;
+    }
+
+    /* main 容器整体缩进，sidebar 保留 */
+    main[data-testid="stAppViewContainer"] {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* block-container 控制 main 的左右留白 */
+    .block-container {
+        padding-left: 6rem !important;   /* 左边留白 */
+        padding-right: 6rem !important;  /* 右边留白 */
+        padding-top: 1rem !important;    /* 上方缩小 */
+        margin: 0 auto !important;
+        max-width: 100% !important;
+    }
+
+    /* AppViewBlockContainer 顶部保持一致 */
+    div[data-testid="stAppViewBlockContainer"] {
+        padding-top: 1rem !important;
+        margin-top: 0 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown("""
+    <style>
+    /* 让 Sidebar 永远显示在最上层 */
+    section[data-testid="stSidebar"] {
+        z-index: 999 !important;
+        background-color: rgba(0, 0, 0, 0.8); /* 半透明黑，避免被视频盖住 */
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 # 加载训练好的模型
 model = pickle.load(open("exoplanet_model.pkl", "rb"))
 
 st.set_page_config(page_title="🚀 NASA Exoplanet Classifier", layout="wide")
 
+
+# --- 初始化页面状态 ---
+if "page" not in st.session_state:
+    st.session_state.page = "Home"
+
 # --- Sidebar navigation ---
-st.sidebar.subheader("🔭 Menu")
-page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
+st.sidebar.subheader("🔭 Navigation")
+choice = st.sidebar.radio(
+    "Go to:",
+    ["Home", "Novice Mode", "Researcher Mode"],
+    index=["Home", "Novice Mode", "Researcher Mode"].index(st.session_state.page)
+)
+
+# 保证 sidebar 的选择覆盖 session_state
+st.session_state.page = choice
+page = st.session_state.page
+
 
 # --- Home Page ---
 if page == "Home":
     # logo 图标
-    col_empty, col_left, col_mid, col_right, col_empty2 = st.columns([1, 1, 1, 1, 1])
+    col_empty, col_left, col_mid, col_right, col_empty2 = st.columns([0.5, 1, 2, 1, 0.5])
 
     with col_left:
         st.markdown("<div style='margin-top:-20px'></div>", unsafe_allow_html=True)
-        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
+        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=300)  
     
     with col_right: 
         st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
-        st.image("https://i.imgur.com/TL2RXUL.png", width=190)
+        st.image("https://i.imgur.com/TL2RXUL.png", width=300)
 
     st.markdown(
+    "<h1 style='text-align: center; font-size: 100px; color: #00BFFF;'>Exoscan117 🚀</h1>",
+    unsafe_allow_html=True
+    )
+
+    page_bg_video = """
+    <style>
+    .stApp {
+        background: transparent !important; /* 去掉默认背景 */
+    }
+    video#bgvid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        pointer-events: none;  /* 禁止鼠标事件，避免误点 */
+    }
+    video::-webkit-media-controls {
+        display: none !important;  /* 隐藏控制栏 (Chrome, Edge, Safari) */
+    }
+    video::-moz-media-controls {
+        display: none !important;  /* 隐藏控制栏 (Firefox) */
+    }
+    </style>
+
+    <video autoplay muted loop playsinline id="bgvid">
+        <source src="https://github.com/chengkiet2020-byte/exoplanet-app/raw/refs/heads/main/videos/earthroute%20(1)%20(1).mp4" type="video/mp4">
+    </video>
+    """
+    st.markdown(page_bg_video, unsafe_allow_html=True)
+
+    st.subheader("🌌 Galactic Explorer 117")
+    st.markdown(
+        "Welcome to our Exoplanet Classifier! Choose one of the modes below:",
+        unsafe_allow_html=True
+    )
+    
+    
+    # 自定义按钮样式
+    st.markdown(
         """
-        <h1 style="color: #FFD580; 
-                   font-size: 80px; 
-                   font-weight: bold; 
-                   margin-top:30px; 
-                   text-align:center;">
-            Exoscan 117 🚀
-        </h1>
+        <style>
+        div.stButton > button {
+            font-weight: bold;
+            font-size: 28px;
+            padding: 20px 36px;
+            border-radius: 16px;
+            border: 2px solid;
+            width: 100%;
+            height: 80px;
+        }
+        /* Novice Mode 按钮 */
+        div[data-testid="stButton"]:first-child > button {
+            border-color: #00FF00;
+            background-color: #006400;
+            color: yellow;
+        }
+        div[data-testid="stButton"]:first-child > button:hover {
+            background-color: #00FF00;
+            color: black;
+        }
+        /* Researcher Mode 按钮 */
+        div[data-testid="stButton"]:nth-child(2) > button {
+            border-color: #1E90FF;
+            background-color: #00008B;
+            color: yellow;
+        }
+        div[data-testid="stButton"]:nth-child(2) > button:hover {
+            background-color: #1E90FF;
+            color: black;
+        }
+        </style>
         """,
         unsafe_allow_html=True
     )
 
+    # 两个按钮并排
+    col1, col2 = st.columns(2)
 
-    st.markdown(
-    """
-    <div style="text-align:center;">
-    
-    <span style="display:inline-block; 
-                 border: 2px solid white;
-                 background-color: white;
-                 padding: 8px 20px; 
-                 border-radius: 10px; 
-                 font-size:35px; 
-                 font-weight: bold; 
-                 color: red;">
-        Team: Galactic Explorer 117
-    </span>
-    
-    <p style="font-size:30px; line-height:1.6; color: white; text-align:center;">
-    Welcome ⭐ to our Exoplanet Classifier🪐! 
-    <br> Choose one of the modes from the sidebar:
-    <br><br> 
-    
-    <!-- Novice Mode 按钮式标签 -->
-    <span style="display:inline-block; 
-                 border: 2px solid #00FF00; 
-                 background-color: #006400; 
-                 padding: 8px 20px; 
-                 border-radius: 10px; 
-                 font-weight: bold; 
-                 font-size: 30px; 
-                 color: yellow;">
-        Novice Mode 🟢
-    </span>
-    <br> <span style="font-size:25px;">- For beginners, explore planets by entering basic parameters.</span>
-    <br> <span style="font-size:25px;">(Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>)</span>
-    <br><br> 
-    
-    <!-- Researcher Mode 按钮式标签 -->
-    <span style="display:inline-block; 
-                 border: 2px solid #1E90FF; 
-                 background-color: #00008B; 
-                 padding: 8px 20px; 
-                 border-radius: 10px; 
-                 font-weight: bold; 
-                 font-size: 30px; 
-                 color: yellow;">
-        2) Researcher Mode 🔬
-    </span>
-    <br> <span style="font-size:25px;">- For advanced users, upload datasets, train models, and analyze results.</span>
-    </p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+    with col1:
+        if st.button("Novice Mode 🟢"):
+            st.session_state.page = "Novice Mode"
+        st.markdown(
+            """
+            <div style='font-size:20px; margin-top:1rem;'>
+            - For beginners, explore planets by entering basic parameters.<br>
+            - Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA KOI</a>
+            </div>
+            """, unsafe_allow_html=True
+        )
+
+    with col2:
+        if st.button("Researcher Mode 🔬"):
+            st.session_state.page = "Researcher Mode"
+        st.markdown(
+            """
+            <div style='font-size:20px; margin-top:1rem;'>
+            - For advanced users, upload datasets, train models, and analyze results.
+            </div>
+            """, unsafe_allow_html=True
+        )
 
 # --- Novice Mode ---
 elif page == "Novice Mode":
     st.header("🟢 Novice Mode - Quick Classification")
 
     # 设置星空背景
-    # page_bg_video = """
-    # <style>
-    # #bgvid {
-    #     position: fixed;
-    #     top: 0;
-    #     left: 0;
-    #     width: 100%;
-    #     height: 100%;
-    #     object-fit: cover;
-    #     z-index: -9999;
-    #     background: black;
-    # }
-    # </style>
+    page_bg_video = """
+    <style>
+    .stApp {
+        background: transparent !important; /* 去掉默认背景 */
+    }
+    video#bgvid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        pointer-events: none;  /* 禁止鼠标事件，避免误点 */
+    }
+    video::-webkit-media-controls {
+        display: none !important;  /* 隐藏控制栏 (Chrome, Edge, Safari) */
+    }
+    video::-moz-media-controls {
+        display: none !important;  /* 隐藏控制栏 (Firefox) */
+    }
+    </style>
 
-    # <video autoplay muted loop playsinline id="bgvid">
-    #     <source src="https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/videos/earth.mp4" type="video/mp4">
-    # </video>
-    # """
+    <video autoplay muted loop playsinline id="bgvid">
+        <source src="https://github.com/chengkiet2020-byte/exoplanet-app/raw/refs/heads/main/videos/earthroute%20(1)%20(1).mp4" type="video/mp4">
+    </video>
+    """
+    st.markdown(page_bg_video, unsafe_allow_html=True)
 
-    # st.markdown(page_bg_video, unsafe_allow_html=True)
 
 
- # 页面分为两列
+    # NASA Logo + 标题
+    col1, col2, col3 = st.columns([1, 2, 1])
+
+    with col1:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=200)
+
+    st.markdown(
+    "<h1 style='text-align: center; font-size: 60px; color: #00BFFF;'>🚀 NASA Exoplanet Classifier</h1>",
+    unsafe_allow_html=True
+    )
+    
+    st.write("<h4 style='text-align: center; color: white;'>Analyze Kepler exoplanet data and classify candidates into Confirmed, Candidate, or False Positive</h4>", unsafe_allow_html=True)
+
+    # 页面分为两列
     col_input, col_nothing, col_result = st.columns([3, 1, 3])  # 左边宽一些，右边窄一些
 
     with col_input:
@@ -500,25 +649,35 @@ elif page == "Researcher Mode":
     st.header("🔬 Researcher Mode - Advanced Tools")
 
     # 设置星空背景
-    page_bg_img = """
+    page_bg_video = """
     <style>
-    [data-testid="stAppViewContainer"] {
-        background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+    .stApp {
+        background: transparent !important; /* 去掉默认背景 */
     }
-
-    [data-testid="stHeader"] {
-        #background: rgba(0,0,0,0); /* 顶部透明 */
+    video#bgvid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        pointer-events: none;  /* 禁止鼠标事件，避免误点 */
     }
-
-    [data-testid="stToolbar"] {
-        right: 2rem;
+    video::-webkit-media-controls {
+        display: none !important;  /* 隐藏控制栏 (Chrome, Edge, Safari) */
+    }
+    video::-moz-media-controls {
+        display: none !important;  /* 隐藏控制栏 (Firefox) */
     }
     </style>
+
+    <video autoplay muted loop playsinline id="bgvid">
+        <source src="https://github.com/chengkiet2020-byte/exoplanet-app/raw/refs/heads/main/videos/earthroute%20(1)%20(1).mp4" type="video/mp4">
+    </video>
     """
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+    st.markdown(page_bg_video, unsafe_allow_html=True)
+
 
     st.write("Here you can upload new datasets, retrain the model, and analyze accuracy.")
 
@@ -692,7 +851,7 @@ elif page == "Researcher Mode":
                         st.success(f"✅ {model_choice} trained! Accuracy: **{acc:.2f}**")
 
                         import joblib
-                        joblib.dump(model, "exoplanet_model.pkl")
+                        joblib.dump(model, "exoplanet_model_fake.pkl")
                         st.info("💾 Model saved as `exoplanet_model.pkl`")
 
                         st.subheader("📊 Classification Report")
@@ -835,43 +994,6 @@ elif page == "Researcher Mode":
         ⚠️ These datasets need to be downloaded in CSV format and uploaded here again.
         """,
         unsafe_allow_html=True
+
     )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
