@@ -515,32 +515,72 @@ if page == "Home":
 )
    
     # 自定义按钮样式 
-    st.markdown( """ <style> div.stButton > button { font-weight: bold; font-size: 28px; padding: 20px 36px; border-radius: 16px; border: 2px solid; width: 100%; height: 80px; }
     
-        /* Novice Mode 按钮 */
-        div[data-testid="stButton"]:first-child > button {
-            border-color: #1E90FF;
-            background-color: #00008B;
-            color: yellow;
-        }
-        div[data-testid="stButton"]:first-child > button:hover {
-            background-color: #00FF00;
-            color: black;
-        }
-        /* Researcher Mode 按钮 */
-        div[data-testid="stButton"]:nth-child(2) > button {
-            border-color: #FF0000;
-            background-color: #FF0000;
-            color: white;
-        }
-        div[data-testid="stButton"]:nth-child(2) > button:hover {
-            background-color: #8B0000;
-            color: yellow;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    st.markdown(
+    """
+    <style>
+    /* 全局按钮基础样式 */
+    div.stButton > button {
+        font-weight: bold !important;
+        font-size: 30px !important;     /* 字体大小 */
+        height: 90px !important;        /* 按钮高度 */
+        width: 100% !important;         /* 让按钮填满列 */
+        border-radius: 16px !important;
+    }
+
+    /* Novice Mode 按钮 (第一个) */
+    div[data-testid="stButton"]:nth-of-type(1) > button {
+        background-color: #00008B !important;   /* 深蓝底 */
+        color: yellow !important;               /* 黄色字体 */
+        border: 2px solid #1E90FF !important;
+    }
+    div[data-testid="stButton"]:nth-of-type(1) > button:hover {
+        background-color: #00FF00 !important;   /* 绿色悬停 */
+        color: black !important;
+    }
+
+    /* Researcher Mode 按钮 (第二个) */
+    div[data-testid="stButton"]:nth-of-type(2) > button {
+        background-color: #FF0000 !important;   /* 红底 */
+        color: white !important;                /* 白字 */
+        border: 2px solid #8B0000 !important;
+    }
+    div[data-testid="stButton"]:nth-of-type(2) > button:hover {
+        background-color: #8B0000 !important;   /* 暗红悬停 */
+        color: yellow !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+    
+    # st.markdown( """ <style> div.stButton > button { font-weight: bold; font-size: 28px; padding: 20px 36px; border-radius: 16px; border: 2px solid; width: 100%; height: 80px; }
+    
+    #     /* Novice Mode 按钮 */
+    #     div[data-testid="stButton"]:first-child > button {
+    #         border-color: #1E90FF;
+    #         background-color: #00008B;
+    #         color: yellow;
+    #     }
+    #     div[data-testid="stButton"]:first-child > button:hover {
+    #         background-color: #00FF00;
+    #         color: black;
+    #     }
+    #     /* Researcher Mode 按钮 */
+    #     div[data-testid="stButton"]:nth-child(2) > button {
+    #         border-color: #FF0000;
+    #         background-color: #FF0000;
+    #         color: white;
+    #     }
+    #     div[data-testid="stButton"]:nth-child(2) > button:hover {
+    #         background-color: #8B0000;
+    #         color: yellow;
+    #     }
+    #     </style>
+    #     """,
+    #     unsafe_allow_html=True
+    # )
 
     # 两个按钮并排
     col1, col2 = st.columns(2)
@@ -1017,6 +1057,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
