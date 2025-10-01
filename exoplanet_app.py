@@ -528,49 +528,29 @@ if page == "Home":
         border-radius: 16px !important;
     }
 
-/* Novice Mode 按钮 (第一个) */
-div[data-testid="stButton"]:nth-of-type(1) button {
-    background-color: #00008B !important;   /* 深蓝底 */
-    color: yellow !important;               /* 黄色字体 */
-    border: 2px solid #1E90FF !important;
-    font-size: 30px !important;
-    height: 90px !important;
-    width: 100% !important;
-}
 
-/* Researcher Mode 按钮 (第二个) */
-div[data-testid="stButton"]:nth-of-type(2) button {
-    background-color: #FF0000 !important;   /* 红底 */
-    color: white !important;
-    border: 2px solid #8B0000 !important;
-    font-size: 30px !important;
-    height: 90px !important;
-    width: 100% !important;
-}
-
-
-    #     /* Novice Mode 按钮 */
-    #     div[data-testid="stButton"]:first-child > button {
-    #         border-color: #1E90FF;
-    #         background-color: #00008B;
-    #         color: yellow;
-    #     }
-    #     div[data-testid="stButton"]:first-child > button:hover {
-    #         background-color: #00FF00;
-    #         color: black;
-    #     }
-    #     /* Researcher Mode 按钮 */
-    #     div[data-testid="stButton"]:nth-child(2) > button {
-    #         border-color: #FF0000;
-    #         background-color: #FF0000;
-    #         color: white;
-    #     }
-    #     div[data-testid="stButton"]:nth-child(2) > button:hover {
-    #         background-color: #8B0000;
-    #         color: yellow;
-    #     }
-    #     </style>
-    #     """,
+        /* Novice Mode 按钮 */
+        div[data-testid="stButton"]:first-child > button {
+            border-color: #1E90FF;
+            background-color: #00008B;
+            color: yellow;
+        }
+        div[data-testid="stButton"]:first-child > button:hover {
+            background-color: #00FF00;
+            color: black;
+        }
+        /* Researcher Mode 按钮 */
+        div[data-testid="stButton"]:nth-child(2) > button {
+            border-color: #FF0000;
+            background-color: #FF0000;
+            color: white;
+        }
+        div[data-testid="stButton"]:nth-child(2) > button:hover {
+            background-color: #8B0000;
+            color: yellow;
+        }
+        </style>
+        """,
         unsafe_allow_html=True
     )
 
@@ -1049,6 +1029,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
