@@ -493,6 +493,17 @@ if page == "Home":
     
     
     # 自定义按钮样式
+    col1, col2 = st.columns(2)
+
+    with col1:
+        if st.button("Novice Mode 🟢", key="novice"):
+            st.session_state.page = "Novice Mode"
+
+    with col2:
+        if st.button("Researcher Mode 🔴", key="researcher"):
+            st.session_state.page = "Researcher Mode"
+
+    
     st.markdown(
         """
         <style>
@@ -505,30 +516,54 @@ if page == "Home":
             width: 100%;
             height: 80px;
         }
-        /* Novice Mode 按钮 */
-        div[data-testid="stButton"]:first-child > button {
-            border-color: #1E90FF;
-            background-color: #00008B;
-            color: yellow;
+
+    /* Novice Mode */
+    div[data-testid="stButton"][id="novice"] > button {
+        border-color: #1E90FF;
+        background-color: #00008B;
+        color: yellow;
+    }
+    div[data-testid="stButton"][id="novice"] > button:hover {
+        background-color: #00FF00;
+        color: black;
+    }
+
+    /* Researcher Mode */
+    div[data-testid="stButton"][id="researcher"] > button {
+        border-color: #FF0000;
+        background-color: #FF0000;
+        color: white;
+    }
+    div[data-testid="stButton"][id="researcher"] > button:hover {
+        background-color: #8B0000;
+        color: yellow;
         }
-        div[data-testid="stButton"]:first-child > button:hover {
-            background-color: #00FF00;
-            color: black;
-        }
-        /* Researcher Mode 按钮 */
-        div[data-testid="stButton"]:nth-child(2) > button {
-            border-color: #FF0000;
-            background-color: #FF0000;
-            color: white;
-        }
-        div[data-testid="stButton"]:nth-child(2) > button:hover {
-            background-color: #8B0000;
-            color: yellow;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+
+        
+    #     /* Novice Mode 按钮 */
+    #     div[data-testid="stButton"]:first-child > button {
+    #         border-color: #1E90FF;
+    #         background-color: #00008B;
+    #         color: yellow;
+    #     }
+    #     div[data-testid="stButton"]:first-child > button:hover {
+    #         background-color: #00FF00;
+    #         color: black;
+    #     }
+    #     /* Researcher Mode 按钮 */
+    #     div[data-testid="stButton"]:nth-child(2) > button {
+    #         border-color: #FF0000;
+    #         background-color: #FF0000;
+    #         color: white;
+    #     }
+    #     div[data-testid="stButton"]:nth-child(2) > button:hover {
+    #         background-color: #8B0000;
+    #         color: yellow;
+    #     }
+    #     </style>
+    #     """,
+    #     unsafe_allow_html=True
+    # )
 
     # 两个按钮并排
     col1, col2 = st.columns(2)
@@ -1005,6 +1040,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
