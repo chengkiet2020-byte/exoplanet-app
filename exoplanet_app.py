@@ -35,7 +35,7 @@ page_bg_video = """
 st.markdown(page_bg_video, unsafe_allow_html=True)
 
 # Custom CSS for gradient dark blue header + sidebar
-st.markdown(
+    st.markdown(
     """
     <style>
     /* 顶部导航栏（Header） */
@@ -125,30 +125,32 @@ div[data-baseweb="menu"] div[role="listbox"] div[role="option"] {
 """, unsafe_allow_html=True)
 
 
-st.markdown("""
-<style>
-/* Title (st.title 或 markdown #) */
-h1 {
-    font-size: 50px !important;
-}
+st.markdown(
+    """
+    <style>
+    /* Title (st.title 或 markdown #) */
+    h1 {
+        font-size: 50px !important;
+    }
 
-/* Header (st.header 或 markdown ##) */
-h2 {
-    font-size: 40px !important;
-}
+    /* Header (st.header 或 markdown ##) */
+    h2 {
+        font-size: 40px !important;
+    }
 
-/* Subheader (st.subheader 或 markdown ###) */
-h3 {
-    font-size: 32px !important;
-}
+    /* Subheader (st.subheader 或 markdown ###) */
+    h3 {
+        font-size: 32px !important;
+    }
 
-/* 普通 markdown 文本（p, span, div 内文字） */
-p, div, span, label {
-    font-size: 18px !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
+    /* 普通 markdown 文本（p, span, div 内文字） */
+    p, div, span, label {
+        font-size: 18px !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # 放在 app 开头
 st.markdown(
@@ -354,7 +356,7 @@ if page == "Home":
         st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
         st.image("https://i.imgur.com/TL2RXUL.png", width=190)
 
-    st.markdown(
+st.markdown(
         """
         <h1 style="color: #FFD580; 
                    font-size: 80px; 
@@ -368,7 +370,7 @@ if page == "Home":
     )
 
     # st.title("🚀 Exoscan 117")
-    st.markdown(
+st.markdown(
     """
     <h1 style="color: #FFD580; 
                font-size: 80px; 
@@ -853,6 +855,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
