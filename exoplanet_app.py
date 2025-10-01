@@ -16,14 +16,15 @@ import numpy as np
 st.markdown(
     """
     <style>
-    a {
-        color: #BA55D3 !important;  /* 浅紫色 */
+    /* 覆盖 Streamlit 里所有 markdown 链接 */
+    .stMarkdown a {
+        color: #BA55D3 !important;
         font-weight: bold;
-        text-decoration: none;      /* 去掉下划线 */
+        text-decoration: none !important;
     }
-    a:hover {
-        color: #FF69B4 !important;  /* 鼠标悬停变粉 */
-        text-decoration: underline;
+    .stMarkdown a:hover {
+        color: #FF69B4 !important;   /* 悬停变粉色 */
+        text-decoration: underline !important;
     }
     </style>
     """,
@@ -1016,6 +1017,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
