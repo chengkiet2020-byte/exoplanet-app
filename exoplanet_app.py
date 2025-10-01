@@ -538,7 +538,9 @@ if page == "Home":
         background-color: #8B0000;
         color: yellow;
         }
-
+        
+        unsafe_allow_html=True
+    )
         
     #     /* Novice Mode 按钮 */
     #     div[data-testid="stButton"]:first-child > button {
@@ -1040,6 +1042,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
