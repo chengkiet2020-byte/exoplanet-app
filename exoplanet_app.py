@@ -478,7 +478,7 @@ if page == "Home":
 
     st.markdown(
     """
-    <h1 style='text-align: center; font-size: 90px; color: #00BFFF;'>
+    <h1 style='text-align: center; font-size: 70px; color: #00BFFF;'>
         Team: Galactic Explorer 117
     </h1>
     """,
@@ -1014,6 +1014,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
