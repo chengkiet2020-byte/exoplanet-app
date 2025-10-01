@@ -339,49 +339,34 @@ page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
 
 # --- Home Page ---
 if page == "Home":
+    # logo 图标
+    col_empty, col_left, col_mid, col_right, col_empty2 = st.columns([1.2, 0.8, 1.5, 1, 1])
+
+    with col_left:
+        st.markdown("<div style='margin-top:-20px'></div>", unsafe_allow_html=True)
+        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
+
+    with col_mid:
+        st.markdown("<div style='margin-top:60px'></div>", unsafe_allow_html=True)
+        st.image("https://i.imgur.com/v2y7ZST.jpeg", width=1420) 
+    
+    with col_right: 
+        st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
+        st.image("https://i.imgur.com/TL2RXUL.png", width=190)
+
     st.markdown(
-    """
-    <h1 style="color: #FFD580; 
-               font-size: 80px; 
-               font-weight: bold; 
-               margin-top:30px; 
-               text-align:center;">
-        Exoscan 117 🚀
-    </h1>
-    """,
-    unsafe_allow_html=True
-)
+        """
+        <h1 style="color: #FFD580; 
+                   font-size: 80px; 
+                   font-weight: bold; 
+                   margin-top:30px; 
+                   text-align:center;">
+            Exoscan 117 🚀
+        </h1>
+        """,
+        unsafe_allow_html=True
+    )
 
-st.markdown(
-    """
-    <style>
-    a {
-        color: orange !important;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    a:hover {
-        color: red !important;
-        text-decoration: underline;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-# logo 图标
-col_empty, col_left, col_mid, col_right, col_empty2 = st.columns([1.2, 0.8, 1.5, 1, 1])
-
-with col_left:
-    st.markdown("<div style='margin-top:-20px'></div>", unsafe_allow_html=True)
-    st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
-
-with col_mid:
-    st.markdown("<div style='margin-top:60px'></div>", unsafe_allow_html=True)
-    st.image("https://i.imgur.com/v2y7ZST.jpeg", width=1420) 
-
-with col_right: 
-    st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
-    st.image("https://i.imgur.com/TL2RXUL.png", width=190)     
     # st.title("🚀 Exoscan 117")
     st.markdown(
     """
@@ -868,6 +853,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
