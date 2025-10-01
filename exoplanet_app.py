@@ -485,7 +485,7 @@ if page == "Home":
     unsafe_allow_html=True
 )
 
-st.markdown(
+    st.markdown(
     """
     <div style="text-align: center; font-size: 30px; font-weight: bold; margin: 20px 0;">
         Welcome to our Exoplanet Classifier! Choose one of the modes below:
@@ -1009,6 +1009,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
