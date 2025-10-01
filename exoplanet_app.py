@@ -487,16 +487,15 @@ if page == "Home":
 
     st.markdown(
     """
-    <div style="text-align: center; 
-                font-size: 70px !important; 
-                font-weight: bold; 
-                color: #BA55D3 !important; 
-                margin: 20px 0;">
-        Welcome to our Exoplanet Classifier! Choose one of the modes below:
+    <div style="text-align: center; margin: 20px 0;">
+        <p style="font-size: 50px; font-weight: bold; color: #BA55D3; margin: 0;">
+            Welcome to our Exoplanet Classifier! Choose one of the modes below:
+        </p>
     </div>
     """,
     unsafe_allow_html=True
 )
+
 
     
     # 自定义按钮样式 
@@ -1014,6 +1013,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
