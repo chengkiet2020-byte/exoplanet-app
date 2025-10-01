@@ -338,6 +338,22 @@ st.sidebar.subheader("🔭 Navigation")
 page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
 
 # --- Home Page ---
+if page == "Home":
+
+    st.markdown(
+    """
+    <h1 style="color: #FFD580; 
+               font-size: 80px; 
+               font-weight: bold; 
+               margin-top:30px; 
+               text-align:center;">
+        Exoscan 117 🚀
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
+
+
 st.markdown(
     """
     <style>
@@ -858,6 +874,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
