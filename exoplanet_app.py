@@ -18,12 +18,12 @@ st.markdown(
     <style>
     /* 覆盖 Streamlit 里所有 markdown 链接 */
     .stMarkdown a {
-        color: #BA55D3 !important;
+        color: red !important;
         font-weight: bold;
         text-decoration: none !important;
     }
     .stMarkdown a:hover {
-        color: #FF69B4 !important;   /* 悬停变粉色 */
+        color: dark red !important;   /* 悬停变粉色 */
         text-decoration: underline !important;
     }
     </style>
@@ -1017,6 +1017,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
