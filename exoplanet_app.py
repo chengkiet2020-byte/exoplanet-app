@@ -13,7 +13,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import numpy as np
 
-    page_bg_video = """
+page_bg_video = """
     <style>
     #bgvid {
         position: fixed;
@@ -791,6 +791,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
