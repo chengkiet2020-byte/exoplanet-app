@@ -85,7 +85,7 @@ div[class*="baseweb-popover"], div[class*="baseweb-popover"] * {
 ul[role="listbox"], ul[role="listbox"] * ,
 div[role="listbox"], div[role="listbox"] * {
     background: #000000 !important;
-    color: white !important;
+    color: white;
     border: 1px solid #1E90FF !important;  /* 外框轻微蓝色 */
 }
 
@@ -497,18 +497,26 @@ if page == "Home":
 )
    
     # 自定义按钮样式 
-    st.markdown(
+st.markdown(
     """
     <style>
+    /* 针对按钮和里面的 span 一起改 */
     div.stButton > button {
         font-weight: bold;
-        font-size: 35px ！important;
         padding: 20px 36px;
         border-radius: 16px;
         border: 2px solid;
         width: 100%;
         height: 80px;
     }
+    div.stButton > button > div > p {
+        font-size: 35px !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
     
         /* Novice Mode 按钮 */
         div[data-testid="stButton"]:first-child > button {
@@ -1010,6 +1018,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
