@@ -339,7 +339,6 @@ page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
 
 # --- Home Page ---
 if page == "Home":
-
     st.markdown(
     """
     <h1 style="color: #FFD580; 
@@ -352,7 +351,6 @@ if page == "Home":
     """,
     unsafe_allow_html=True
 )
-
 
 st.markdown(
     """
@@ -383,11 +381,8 @@ with col_mid:
 
 with col_right: 
     st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
-    st.image("https://i.imgur.com/TL2RXUL.png", width=190)  
-
-    
+    st.image("https://i.imgur.com/TL2RXUL.png", width=190)     
     # st.title("🚀 Exoscan 117")
-
     st.markdown(
     """
     <h1 style="color: #FFD580; 
@@ -400,7 +395,6 @@ with col_right:
     """,
     unsafe_allow_html=True
 )
-
 st.markdown(
     """
     <div style="text-align:center;">
@@ -415,7 +409,7 @@ st.markdown(
                  color: red;">
         Team: Galactic Explorer 117
     </span>
-
+    
     <p style="font-size:30px; line-height:1.6; color: white; text-align:center;">
     Welcome ⭐ to our Exoplanet Classifier🪐! 
     <br> Choose one of the modes from the sidebar:
@@ -874,6 +868,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
