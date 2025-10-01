@@ -485,12 +485,14 @@ if page == "Home":
     unsafe_allow_html=True
 )
 
-
-    st.markdown(
-        "Welcome to our Exoplanet Classifier! Choose one of the modes below:",
-        unsafe_allow_html=True
-    )
-    
+st.markdown(
+    """
+    <div style="text-align: center; font-size: 30px; font-weight: bold; margin: 20px 0;">
+        Welcome to our Exoplanet Classifier! Choose one of the modes below:
+    </div>
+    """,
+    unsafe_allow_html=True
+)  
     
     # 自定义按钮样式 
     st.markdown(
@@ -1007,6 +1009,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
