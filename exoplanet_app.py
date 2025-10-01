@@ -495,16 +495,14 @@ if page == "Home":
     """,
     unsafe_allow_html=True
 )
-
-
-    
+   
     # 自定义按钮样式 
     st.markdown(
     """
     <style>
     div.stButton > button {
         font-weight: bold;
-        font-size: 35px;
+        font-size: 35px ！important;
         padding: 20px 36px;
         border-radius: 16px;
         border: 2px solid;
@@ -1012,6 +1010,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
