@@ -338,38 +338,105 @@ st.sidebar.subheader("🔭 Navigation")
 page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
 
 # --- Home Page ---
-if page == "Home":
-    st.title("🚀 NASA Exoplanet Classifier")
-
-    page_bg_img = """
+st.markdown(
+    """
     <style>
-    [data-testid="stAppViewContainer"] {
-        background-image: url("https://www.nasa.gov/wp-content/uploads/2023/07/asteroid-belt.jpg?resize=2000,1125");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+    a {
+        color: orange !important;
+        text-decoration: none;
+        font-weight: bold;
     }
-        [data-testid="stHeader"] {
-        background: rgba(0,0,0,0); /* 顶部透明 */
-    }
-    [data-testid="stToolbar"] {
-        right: 2rem;
+    a:hover {
+        color: red !important;
+        text-decoration: underline;
     }
     </style>
-    """
+    """,
+    unsafe_allow_html=True
+)
+# logo 图标
+    col_empty, col_left, col_mid, col_right, col_empty2 = st.columns([1.2, 0.8, 1.5, 1, 1])
 
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+    with col_left:
+        st.markdown("<div style='margin-top:-20px'></div>", unsafe_allow_html=True)
+        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
 
-    st.subheader("🌌 Galactic Explorer 117")
+    with col_mid:
+        st.markdown("<div style='margin-top:60px'></div>", unsafe_allow_html=True)
+        st.image("https://i.imgur.com/v2y7ZST.jpeg", width=1420) 
+    
+    with col_right: 
+        st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
+        st.image("https://i.imgur.com/TL2RXUL.png", width=190)
+
+    
+    # st.title("🚀 Exoscan 117")
+
     st.markdown(
-        """
-        Welcome to our Exoplanet Classifier!  
-        Choose one of the modes from the sidebar:
-        - **Novice Mode** 🟢 : For beginners, explore planets by entering basic parameters. (Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-    bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">NASA Kepler Objects of Interest(KOI)</a>)
-        - **Researcher Mode** 🔬 : For advanced users, upload datasets, train models, and analyze results.  
-        """,
-        unsafe_allow_html=True
-    )
+    """
+    <h1 style="color: #FFD580; 
+               font-size: 80px; 
+               font-weight: bold; 
+               margin-top:30px; 
+               text-align:center;">
+        Exoscan 117 🚀
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div style="text-align:center;">
+    
+    <span style="display:inline-block; 
+                 border: 2px solid white;
+                 background-color: white;
+                 padding: 8px 20px; 
+                 border-radius: 10px; 
+                 font-size:35px; 
+                 font-weight: bold; 
+                 color: red;">
+        Team: Galactic Explorer 117
+    </span>
+
+    <p style="font-size:30px; line-height:1.6; color: white; text-align:center;">
+    Welcome ⭐ to our Exoplanet Classifier🪐! 
+    <br> Choose one of the modes from the sidebar:
+    <br><br> 
+    
+    <!-- Novice Mode 按钮式标签 -->
+    <span style="display:inline-block; 
+                 border: 2px solid #00FF00; 
+                 background-color: #006400; 
+                 padding: 8px 20px; 
+                 border-radius: 10px; 
+                 font-weight: bold; 
+                 font-size: 30px; 
+                 color: yellow;">
+        1) Novice Mode 🟢
+    </span>
+    <br> <span style="font-size:25px;">- For beginners, explore planets by entering basic parameters.</span>
+    <br> <span style="font-size:25px;">(Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>)</span>
+    <br><br> 
+    
+    <!-- Researcher Mode 按钮式标签 -->
+    <span style="display:inline-block; 
+                 border: 2px solid #1E90FF; 
+                 background-color: #00008B; 
+                 padding: 8px 20px; 
+                 border-radius: 10px; 
+                 font-weight: bold; 
+                 font-size: 30px; 
+                 color: yellow;">
+        2) Researcher Mode 🔬
+    </span>
+    <br> <span style="font-size:25px;">- For advanced users, upload datasets, train models, and analyze results.</span>
+    </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # --- Novice Mode ---
 elif page == "Novice Mode":
@@ -791,6 +858,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
