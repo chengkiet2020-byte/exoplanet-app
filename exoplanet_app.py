@@ -32,7 +32,7 @@ page_bg_video = """
 </video>
 """
 
-    st.markdown(page_bg_video, unsafe_allow_html=True)
+st.markdown(page_bg_video, unsafe_allow_html=True)
 
 # Custom CSS for gradient dark blue header + sidebar
     st.markdown(
@@ -855,6 +855,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
