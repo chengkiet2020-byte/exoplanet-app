@@ -1,4 +1,4 @@
-import streamlit as st
+ximport streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -343,15 +343,11 @@ page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
 # --- Home Page ---
 if page == "Home":
     # logo 图标
-    col_empty, col_left, col_mid, col_right, col_empty2 = st.columns([1.2, 0.8, 1.5, 1, 1])
+    col_empty, col_left, col_mid, col_right, col_empty2 = st.columns([1, 1, 1, 1, 1])
 
     with col_left:
         st.markdown("<div style='margin-top:-20px'></div>", unsafe_allow_html=True)
         st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=220)  
-
-    with col_mid:
-        st.markdown("<div style='margin-top:60px'></div>", unsafe_allow_html=True)
-        st.image("https://i.imgur.com/v2y7ZST.jpeg", width=1420) 
     
     with col_right: 
         st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
@@ -400,7 +396,7 @@ if page == "Home":
                  font-weight: bold; 
                  font-size: 30px; 
                  color: yellow;">
-        1) Novice Mode 🟢
+        Novice Mode 🟢
     </span>
     <br> <span style="font-size:25px;">- For beginners, explore planets by entering basic parameters.</span>
     <br> <span style="font-size:25px;">(Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA Kepler Objects of Interest (KOI)</a>)</span>
@@ -840,6 +836,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
