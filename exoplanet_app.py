@@ -507,8 +507,8 @@ if page == "Home":
         }
         /* Novice Mode 按钮 */
         div[data-testid="stButton"]:first-child > button {
-            border-color: #f2ff00;
-            background-color: #f2ff00;
+            border-color: #1E90FF;
+            background-color: #00008B;
             color: yellow;
         }
         div[data-testid="stButton"]:first-child > button:hover {
@@ -1005,6 +1005,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
