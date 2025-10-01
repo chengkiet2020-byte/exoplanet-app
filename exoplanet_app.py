@@ -23,7 +23,7 @@ if "video_loaded" not in st.session_state:
         width: 100vw;
         height: 100vh;
         object-fit: cover;
-        z-index: -9999;
+        z-index: 0;
         background: black;
     }
     </style>
@@ -793,6 +793,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
