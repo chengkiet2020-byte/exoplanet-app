@@ -130,17 +130,17 @@ st.markdown(
     <style>
     /* Title (st.title 或 markdown #) */
     h1 {
-        font-size: 50px !important;
+        font-size: 50px;
     }
 
     /* Header (st.header 或 markdown ##) */
     h2 {
-        font-size: 40px !important;
+        font-size: 40px;
     }
 
     /* Subheader (st.subheader 或 markdown ###) */
     h3 {
-        font-size: 32px !important;
+        font-size: 32px;
     }
 
     /* 普通 markdown 文本（p, span, div 内文字） */
@@ -165,13 +165,13 @@ st.markdown(
 
     /* 标题 (title, header, subheader) 白色 + NASA 蓝 */
     h1, h2, h3, h4, h5, h6 {
-        color: #00BFFF !important;  /* NASA 蓝色 */
+        color: #00BFFF;  /* NASA 蓝色 */
         font-weight: bold;
     }
 
     /* 普通文字 */
     p, label, span, div {
-        color: white !important;
+        color: white;
     }
 
     /* 按钮设计 */
@@ -843,6 +843,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
