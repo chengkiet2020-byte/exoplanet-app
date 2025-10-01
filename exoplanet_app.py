@@ -13,6 +13,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import numpy as np
 
+if "video_loaded" not in st.session_state:
 page_bg_video = """
 <style>
 #bgvid {
@@ -32,6 +33,7 @@ page_bg_video = """
 """
 
 st.markdown(page_bg_video, unsafe_allow_html=True)
+st.session_state.video_loaded = True
 
 # Custom CSS for gradient dark blue header + sidebar
 st.markdown(
@@ -790,6 +792,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
