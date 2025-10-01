@@ -13,28 +13,26 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import numpy as np
 
-if "video_loaded" not in st.session_state:
-    page_bg_video = """
-    <style>
-    #bgvid {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        z-index: 0;
-        background: black;
-    }
-    </style>
+page_bg_video = """
+<style>
+#bgvid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    background: black;
+}
+</style>
 
-    <video autoplay muted loop playsinline id="bgvid">
-        <source src="https://github.com/chengkiet2020-byte/exoplanet-app/raw/refs/heads/main/videos/earth.mp4" type="video/mp4">
-    </video>
-    """
+<video autoplay muted loop playsinline id="bgvid">
+    <source src="https://github.com/chengkiet2020-byte/exoplanet-app/raw/refs/heads/main/videos/earth.mp4" type="video/mp4">
+</video>
+"""
 
-    st.markdown(page_bg_video, unsafe_allow_html=True)
-    st.session_state.video_loaded = True
+st.markdown(page_bg_video, unsafe_allow_html=True)
 
 # Custom CSS for gradient dark blue header + sidebar
 st.markdown(
@@ -793,6 +791,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
