@@ -497,27 +497,12 @@ if page == "Home":
 )
    
     # 自定义按钮样式 
-st.markdown(
-    """
-    <style>
-    /* Novice Mode 按钮 */
-    div.stButton > button {
-        font-weight: bold;
-        padding: 20px 36px;
-        border-radius: 16px;
-        border: 2px solid;
-        width: 100%;
-        height: 80px;
-    }
-    div.stButton > button > div > p {
-        font-size: 35px !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-
+    st.markdown( 
+    """ <div style="text-align: center; 
+            font-size: 70px !important; 
+            font-weight: bold; color: #BA55D3 !important;
+            margin: 20px 0;"> Welcome to our Exoplanet Classifier! Choose one of the modes below: </div> """, 
+        unsafe_allow_html=True )
 
     
         /* Novice Mode 按钮 */
@@ -1020,6 +1005,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
