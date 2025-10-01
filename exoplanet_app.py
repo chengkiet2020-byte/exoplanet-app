@@ -370,7 +370,7 @@ elif page == "Novice Mode":
     </style>
 
     <video autoplay muted loop playsinline id="bgvid">
-        <source src="videos/earth.mp4" type="video/mp4">
+        <source src="https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/videos/earth.mp4" type="video/mp4">
     </video>
     """
 
@@ -770,4 +770,5 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
