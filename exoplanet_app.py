@@ -571,8 +571,8 @@ div[data-testid="stButton"]:nth-of-type(2) button {
     #     }
     #     </style>
     #     """,
-    #     unsafe_allow_html=True
-    # )
+        unsafe_allow_html=True
+    )
 
     # 两个按钮并排
     col1, col2 = st.columns(2)
@@ -1049,6 +1049,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
