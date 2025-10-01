@@ -476,10 +476,15 @@ if page == "Home":
     """
     st.markdown(page_bg_video, unsafe_allow_html=True)
 
-    st.markdown(
-    "<h1 style='text-align: center; font-size: 90px; color: #00BFFF;'>"Team: Galactic Explorer 117</h1>",
+st.markdown(
+    """
+    <h1 style='text-align: center; font-size: 90px; color: #00BFFF;'>
+        Team: Galactic Explorer 117
+    </h1>
+    """,
     unsafe_allow_html=True
-    )
+)
+
 
     st.markdown(
         "Welcome to our Exoplanet Classifier! Choose one of the modes below:",
@@ -1000,6 +1005,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
