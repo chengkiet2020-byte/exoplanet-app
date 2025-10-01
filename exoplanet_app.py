@@ -336,7 +336,7 @@ model = pickle.load(open("exoplanet_model.pkl", "rb"))
 st.set_page_config(page_title="🚀 NASA Exoplanet Classifier", layout="wide")
 
 # --- Sidebar navigation ---
-st.sidebar.subheader("🔭 Navigation")
+st.sidebar.subheader("🔭 Menu")
 page = st.sidebar.radio("Go to:", ["Home", "Novice Mode", "Researcher Mode"])
 
 # --- Home Page ---
@@ -369,19 +369,7 @@ if page == "Home":
         unsafe_allow_html=True
     )
 
-    # st.title("🚀 Exoscan 117")
-    st.markdown(
-    """
-    <h1 style="color: #FFD580; 
-               font-size: 80px; 
-               font-weight: bold; 
-               margin-top:30px; 
-               text-align:center;">
-        Exoscan 117 🚀
-    </h1>
-    """,
-    unsafe_allow_html=True
-)
+
     st.markdown(
     """
     <div style="text-align:center;">
@@ -855,6 +843,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
