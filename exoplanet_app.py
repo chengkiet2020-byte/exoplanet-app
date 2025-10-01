@@ -13,6 +13,27 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import numpy as np
 
+    page_bg_video = """
+    <style>
+    #bgvid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -9999;
+        background: black;
+    }
+    </style>
+
+    <video autoplay muted loop playsinline id="bgvid">
+        <source src="https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/videos/earth.mp4" type="video/mp4">
+    </video>
+    """
+
+    st.markdown(page_bg_video, unsafe_allow_html=True)
+
 # Custom CSS for gradient dark blue header + sidebar
 st.markdown(
     """
@@ -355,26 +376,26 @@ elif page == "Novice Mode":
     st.header("🟢 Novice Mode - Quick Classification")
 
     # 设置星空背景
-    page_bg_video = """
-    <style>
-    #bgvid {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -9999;
-        background: black;
-    }
-    </style>
+    # page_bg_video = """
+    # <style>
+    # #bgvid {
+    #     position: fixed;
+    #     top: 0;
+    #     left: 0;
+    #     width: 100%;
+    #     height: 100%;
+    #     object-fit: cover;
+    #     z-index: -9999;
+    #     background: black;
+    # }
+    # </style>
 
-    <video autoplay muted loop playsinline id="bgvid">
-        <source src="https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/videos/earth.mp4" type="video/mp4">
-    </video>
-    """
+    # <video autoplay muted loop playsinline id="bgvid">
+    #     <source src="https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/videos/earth.mp4" type="video/mp4">
+    # </video>
+    # """
 
-    st.markdown(page_bg_video, unsafe_allow_html=True)
+    # st.markdown(page_bg_video, unsafe_allow_html=True)
 
 
     # NASA Logo + 标题
@@ -770,5 +791,6 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
