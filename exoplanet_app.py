@@ -32,10 +32,10 @@ page_bg_video = """
 </video>
 """
 
-st.markdown(page_bg_video, unsafe_allow_html=True)
+    st.markdown(page_bg_video, unsafe_allow_html=True)
 
 # Custom CSS for gradient dark blue header + sidebar
-st.markdown(
+    st.markdown(
     """
     <style>
     /* 顶部导航栏（Header） */
@@ -55,7 +55,7 @@ st.markdown(
 )
 
 
-st.markdown("""
+    st.markdown("""
 <style>
 /* ============== 强制覆盖下拉菜单（展开的选项列表） ============== */
 
@@ -125,7 +125,7 @@ div[data-baseweb="menu"] div[role="listbox"] div[role="option"] {
 """, unsafe_allow_html=True)
 
 
-st.markdown(
+    st.markdown(
     """
     <style>
     /* Title (st.title 或 markdown #) */
@@ -153,7 +153,7 @@ st.markdown(
 )
 
 # 放在 app 开头
-st.markdown(
+    st.markdown(
     """
     <style>
     /* 整体背景黑色 */
@@ -213,7 +213,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown(
+    st.markdown(
     """
     <style>
     /* 链接默认样式 */
@@ -232,7 +232,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown(
+    st.markdown(
     """
     <style>
     /* 只针对 dataframe 内部的 grid */
@@ -258,7 +258,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown("""
+    st.markdown("""
     <style>
     /* 让 Streamlit spinner 圈圈变成白色 */
     div[data-testid="stSpinner"] div[role="status"]::before {
@@ -274,7 +274,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
+    st.markdown("""
     <style>
     /* Streamlit 默认 progressbar 的蓝色 NASA 渐变 */
     .stProgress > div > div > div > div {
@@ -285,7 +285,7 @@ st.markdown("""
 
 
 
-st.markdown("""
+    st.markdown("""
 <style>
 /* --- Selectbox & Multiselect 黑底白字 --- */
 div[data-baseweb="select"] > div {
@@ -316,7 +316,7 @@ ul[role="listbox"] li:hover {
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
+    st.markdown("""
 <style>
 /* 下拉展开菜单整体 */
 ul[role="listbox"] {
@@ -356,7 +356,7 @@ if page == "Home":
         st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
         st.image("https://i.imgur.com/TL2RXUL.png", width=190)
 
-st.markdown(
+    st.markdown(
         """
         <h1 style="color: #FFD580; 
                    font-size: 80px; 
@@ -370,7 +370,7 @@ st.markdown(
     )
 
     # st.title("🚀 Exoscan 117")
-st.markdown(
+    st.markdown(
     """
     <h1 style="color: #FFD580; 
                font-size: 80px; 
@@ -382,7 +382,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.markdown(
+    st.markdown(
     """
     <div style="text-align:center;">
     
@@ -855,6 +855,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
