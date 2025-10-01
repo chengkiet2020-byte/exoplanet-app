@@ -500,7 +500,7 @@ if page == "Home":
 st.markdown(
     """
     <style>
-    /* 针对按钮和里面的 span 一起改 */
+    /* Novice Mode 按钮 */
     div.stButton > button {
         font-weight: bold;
         padding: 20px 36px;
@@ -516,6 +516,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
 
     
         /* Novice Mode 按钮 */
@@ -1018,6 +1020,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
