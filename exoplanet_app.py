@@ -504,7 +504,7 @@ if page == "Home":
     <style>
     div.stButton > button {
         font-weight: bold;
-        font-size: 28px;
+        font-size: 35px;
         padding: 20px 36px;
         border-radius: 16px;
         border: 2px solid;
@@ -545,7 +545,7 @@ if page == "Home":
             st.session_state.page = "Novice Mode"
         st.markdown(
             """
-            <div style='font-size:35px; margin-top:1rem;'>
+            <div style='font-size:30px; margin-top:1rem;'>
             - For beginners, explore planets by entering basic parameters.<br>
             - Default dataset: 🔗 <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative" target="_blank">NASA KOI</a>
             </div>
@@ -557,7 +557,7 @@ if page == "Home":
             st.session_state.page = "Researcher Mode"
         st.markdown(
             """
-            <div style='font-size:35px; margin-top:1rem;'>
+            <div style='font-size:30px; margin-top:1rem;'>
             - For advanced users, upload datasets, train models, and analyze results.
             </div>
             """, unsafe_allow_html=True
@@ -1012,6 +1012,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
