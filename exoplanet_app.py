@@ -586,13 +586,13 @@ elif page == "Novice Mode":
     # NASA Logo + 标题
     col1, col2, col3 = st.columns([1, 2, 1])
 
-    with col1:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=200)
+    # with col1:
+    #     st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=200)
 
-    st.markdown(
-    "<h1 style='text-align: center; font-size: 60px; color: #00BFFF;'>🚀 NASA Exoplanet Classifier</h1>",
-    unsafe_allow_html=True
-    )
+    # st.markdown(
+    # "<h1 style='text-align: center; font-size: 60px; color: #00BFFF;'>🚀 NASA Exoplanet Classifier</h1>",
+    # unsafe_allow_html=True
+    # )
     
     st.write("<h4 style='text-align: center; color: white;'>Analyze Kepler exoplanet data and classify candidates into Confirmed, Candidate, or False Positive</h4>", unsafe_allow_html=True)
 
@@ -996,4 +996,5 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
