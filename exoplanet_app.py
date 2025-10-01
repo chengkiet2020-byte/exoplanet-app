@@ -78,7 +78,7 @@ div[data-baseweb="menu"], div[data-baseweb="menu"] * ,
 div[class*="baseui-popover"], div[class*="baseui-popover"] * ,
 div[class*="baseweb-popover"], div[class*="baseweb-popover"] * {
     background: #000000 !important;
-    color: white !important;
+    color: white;
 }
 
 /* listbox 可能是 ul 或 div，及其所有子项 */
@@ -93,7 +93,7 @@ div[role="listbox"], div[role="listbox"] * {
 div[role="option"], div[role="option"] * ,
 li[role="option"], li[role="option"] * {
     background: #000000 !important;
-    color: white !important;
+    color: white;
     padding: 6px 10px !important;
 }
 
@@ -133,7 +133,7 @@ ul[role="listbox"], div[role="listbox"] {
 /* 如果仍然被某些内联类覆盖，可以用 very-specific selector（提高权重） */
 div[data-baseweb="menu"] div[role="listbox"] div[role="option"] {
     background: #000000 !important;
-    color: white !important;
+    color: white;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -1014,6 +1014,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
