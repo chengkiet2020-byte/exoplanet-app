@@ -28,7 +28,8 @@ page_bg_video = """
     </style>
 
     <video autoplay muted loop playsinline id="bgvid">
-        <source src="https://github.com/chengkiet2020-byte/exoplanet-app/blob/main/videos/earth.mp4" type="video/mp4">
+        <source src="https://raw.githubusercontent.com/chengkiet2020-byte/exoplanet-app/main/videos/earth.mp4
+" type="video/mp4">
     </video>
     """
 
@@ -791,6 +792,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
