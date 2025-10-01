@@ -476,7 +476,7 @@ if page == "Home":
     """
     st.markdown(page_bg_video, unsafe_allow_html=True)
 
-st.markdown(
+    st.markdown(
     """
     <h1 style='text-align: center; font-size: 90px; color: #00BFFF;'>
         Team: Galactic Explorer 117
@@ -1005,6 +1005,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
