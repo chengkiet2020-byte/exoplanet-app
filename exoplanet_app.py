@@ -13,6 +13,23 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import numpy as np
 
+st.markdown(
+    """
+    <style>
+    a {
+        color: #BA55D3 !important;  /* 浅紫色 */
+        font-weight: bold;
+        text-decoration: none;      /* 去掉下划线 */
+    }
+    a:hover {
+        color: #FF69B4 !important;  /* 鼠标悬停变粉 */
+        text-decoration: underline;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 page_bg_video = """
 <style>
@@ -999,6 +1016,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
