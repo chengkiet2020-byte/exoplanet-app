@@ -505,17 +505,17 @@ if page == "Home":
 
     
     st.markdown(
-        """
-        <style>
-        div.stButton > button {
-            font-weight: bold;
-            font-size: 28px;
-            padding: 20px 36px;
-            border-radius: 16px;
-            border: 2px solid;
-            width: 100%;
-            height: 80px;
-        }
+    """
+    <style>
+    div.stButton > button {
+        font-weight: bold;
+        font-size: 28px;
+        padding: 20px 36px;
+        border-radius: 16px;
+        border: 2px solid;
+        width: 100%;
+        height: 80px;
+    }
 
     /* Novice Mode */
     div[data-testid="stButton"][id="novice"] > button {
@@ -537,10 +537,11 @@ if page == "Home":
     div[data-testid="stButton"][id="researcher"] > button:hover {
         background-color: #8B0000;
         color: yellow;
-        }
-        
-        unsafe_allow_html=True
-    )
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
         
     #     /* Novice Mode 按钮 */
     #     div[data-testid="stButton"]:first-child > button {
@@ -1042,6 +1043,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
