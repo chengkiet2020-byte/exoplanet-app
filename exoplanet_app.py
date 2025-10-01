@@ -476,7 +476,11 @@ if page == "Home":
     """
     st.markdown(page_bg_video, unsafe_allow_html=True)
 
-    st.subheader("🌌 Galactic Explorer 117")
+     st.markdown(
+    "<h1 style='text-align: center; font-size: 90px; color: #00BFFF;'>"Team: 🌌 Galactic Explorer 117</h1>",
+    unsafe_allow_html=True
+    )
+
     st.markdown(
         "Welcome to our Exoplanet Classifier! Choose one of the modes below:",
         unsafe_allow_html=True
@@ -498,8 +502,8 @@ if page == "Home":
         }
         /* Novice Mode 按钮 */
         div[data-testid="stButton"]:first-child > button {
-            border-color: #00FF00;
-            background-color: #006400;
+            border-color: #f2ff00;
+            background-color: #f2ff00;
             color: yellow;
         }
         div[data-testid="stButton"]:first-child > button:hover {
@@ -996,5 +1000,6 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
