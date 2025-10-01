@@ -143,17 +143,17 @@ st.markdown("""
 <style>
 /* Header (st.header 或 markdown ##) */
 h2 {
-    font-size: 44px !important;
+    font-size: 44px;
 }
 
 /* Subheader (st.subheader 或 markdown ###) */
 h3 {
-    font-size: 36px !important;
+    font-size: 36px;
 }
 
 /* 普通 markdown 文本（p, span, div 内文字） */
 p, div, span, label {
-    font-size: 20px !important;
+    font-size: 20px;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -178,7 +178,7 @@ st.markdown(
 
     /* 普通文字 */
     p, label, span, div {
-        color: white !important;
+        color: white;
     }
 
     /* 按钮设计 */
@@ -1014,6 +1014,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
