@@ -24,16 +24,17 @@ if "video_loaded" not in st.session_state:
         height: 100vh;
         object-fit: cover;
         z-index: -9999;
-}
-</style>
+        background: black;
+    }
+    </style>
 
-<video autoplay muted loop playsinline id="bgvid">
-    <source src="https://github.com/chengkiet2020-byte/exoplanet-app/raw/refs/heads/main/videos/earth.mp4" type="video/mp4">
-</video>
-"""
+    <video autoplay muted loop playsinline id="bgvid">
+        <source src="https://github.com/chengkiet2020-byte/exoplanet-app/raw/refs/heads/main/videos/earth.mp4" type="video/mp4">
+    </video>
+    """
 
-st.markdown(page_bg_video, unsafe_allow_html=True)
-st.session_state.video_loaded = True
+    st.markdown(page_bg_video, unsafe_allow_html=True)
+    st.session_state.video_loaded = True
 
 # Custom CSS for gradient dark blue header + sidebar
 st.markdown(
@@ -792,6 +793,7 @@ elif page == "Researcher Mode":
         """,
         unsafe_allow_html=True
     )
+
 
 
 
