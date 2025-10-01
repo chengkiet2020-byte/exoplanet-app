@@ -487,7 +487,7 @@ if page == "Home":
 
     st.markdown(
     """
-    <div style="text-align: center; font-size: 50px; font-weight: bold; font-colour: purple; margin: 20px 0;">
+    <div style="text-align: center; font-size: 50px; font-weight: bold; font-colour: #BA55D3; margin: 20px 0;">
         Welcome to our Exoplanet Classifier! Choose one of the modes below:
     </div>
     """,
@@ -1009,6 +1009,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
