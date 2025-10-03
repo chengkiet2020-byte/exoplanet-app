@@ -454,7 +454,7 @@ if page == "Home":
 
     with col_left:
         st.markdown("<div style='margin-top:-20px'></div>", unsafe_allow_html=True)
-        st.image("https://spaceappssarawak.com/wp-content/uploads/2024/09/space-lg-about-img-a.png", width=300)  
+        st.image("https://spaceappssarawak.com/wp-content/uploads/2024/09/space-lg-about-img-a.png", width=400)  
     
     with col_right: 
         st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
@@ -1029,6 +1029,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
