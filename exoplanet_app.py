@@ -648,7 +648,7 @@ elif page == "Novice Mode":
             features = np.array([[koi_period, koi_prad, koi_duration, koi_depth, koi_steff, koi_srad, koi_smass]])
             prediction = model.predict(features)[0]
 
-            nasa_logo_url = "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg"
+            nasa_logo_url = "https://upload.wikimedia.org/wikipedia/commons/a/a0/Space_Apps_Logo_White.png"
 
             if prediction == "CONFIRMED":
                 st.image(nasa_logo_url, width=80)
@@ -1029,6 +1029,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
