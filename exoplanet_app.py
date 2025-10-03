@@ -259,7 +259,7 @@ st.markdown(
     <style>
     /* 链接默认样式 */
     a {
-        color: #00BFFF !important;       /* 更亮蓝 (DodgerBlue) */
+        color: #00BFFF;       /* 更亮蓝 (DodgerBlue) */
         text-decoration: none !important; /* 去掉下划线 */
         font-weight: bold;
     }
@@ -454,7 +454,7 @@ if page == "Home":
 
     with col_left:
         st.markdown("<div style='margin-top:-20px'></div>", unsafe_allow_html=True)
-        st.image("https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg", width=300)  
+        st.image("https://upload.wikimedia.org/wikipedia/commons/a/a0/Space_Apps_Logo_White.png", width=300)  
     
     with col_right: 
         st.markdown("<div style='margin-left:100px'></div>", unsafe_allow_html=True)  # 加空白
@@ -1029,6 +1029,7 @@ elif page == "Researcher Mode":
         unsafe_allow_html=True
 
     )
+
 
 
 
